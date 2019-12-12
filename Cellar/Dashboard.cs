@@ -19,36 +19,58 @@ namespace Cellar
 
             bottles = collection;
             subtitle.Text = $"{collection.FirstName} {collection.LastName}'s Cellar";
-
-            btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
-            btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
-            btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
-            btnStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
         }
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
+            btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
+            btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+
+            dashboardPanel.Visible = true;
+            addPanel.Visible = false;
+            inventoryPanel.Visible = false;
+            statsPanel.Visible = false;
         }
 
         private void BtnAddBottle_Click(object sender, EventArgs e)
         {
-            AddBottle add = new AddBottle(bottles);
-            add.Show();
-            Hide();
+            btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
+            btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+
+            dashboardPanel.Visible = false;
+            addPanel.Visible = true;
+            inventoryPanel.Visible = false;
+            statsPanel.Visible = false;
         }
 
         private void BtnInventory_Click(object sender, EventArgs e)
         {
-            Inventory inv = new Inventory(bottles);
-            inv.Show();
-            Hide();
+            btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
+            btnStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+
+            dashboardPanel.Visible = false;
+            addPanel.Visible = false;
+            inventoryPanel.Visible = true;
+            statsPanel.Visible = false;
         }
 
         private void BtnStats_Click(object sender, EventArgs e)
         {
-            Statistics stat = new Statistics(bottles);
-            stat.Show();
-            Hide();
+            btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
+
+            dashboardPanel.Visible = false;
+            addPanel.Visible = false;
+            inventoryPanel.Visible = false;
+            statsPanel.Visible = true;
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
