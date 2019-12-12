@@ -16,5 +16,25 @@ namespace Cellar
         {
             InitializeComponent();
         }
+
+        private void BtnCreateAcct_Click(object sender, EventArgs e)
+        {
+            //Verify info and create account
+        }
+
+        private void ShowSignIn_Click(object sender, EventArgs e)
+        {
+            //Hide this panel and show the sign-in one
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            //Verify info and login to account
+        }
+
+        private void ShowSignUp_Click(object sender, EventArgs e)
+        {
+            //Hide this panel and show sign-up panel
+        }
     }
 }
