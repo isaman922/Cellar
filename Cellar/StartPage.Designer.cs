@@ -353,7 +353,7 @@
             this.signInPanel.Location = new System.Drawing.Point(11, 192);
             this.signInPanel.Name = "signInPanel";
             this.signInPanel.Size = new System.Drawing.Size(860, 479);
-            this.signInPanel.TabIndex = 26;
+            this.signInPanel.TabIndex = 0;
             // 
             // showSignUp
             // 
@@ -364,7 +364,7 @@
             this.showSignUp.MinimumSize = new System.Drawing.Size(438, 24);
             this.showSignUp.Name = "showSignUp";
             this.showSignUp.Size = new System.Drawing.Size(438, 24);
-            this.showSignUp.TabIndex = 13;
+            this.showSignUp.TabIndex = 6;
             this.showSignUp.Text = "Don\'t have an account? Click here to sign up.";
             this.showSignUp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.showSignUp.Click += new System.EventHandler(this.ShowSignUp_Click);
@@ -388,7 +388,7 @@
             this.btnLogin.Location = new System.Drawing.Point(211, 354);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(438, 88);
-            this.btnLogin.TabIndex = 12;
+            this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
@@ -400,7 +400,7 @@
             this.pin4.MaxLength = 1;
             this.pin4.Name = "pin4";
             this.pin4.Size = new System.Drawing.Size(31, 30);
-            this.pin4.TabIndex = 7;
+            this.pin4.TabIndex = 4;
             this.pin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pin3
@@ -410,7 +410,7 @@
             this.pin3.MaxLength = 1;
             this.pin3.Name = "pin3";
             this.pin3.Size = new System.Drawing.Size(31, 30);
-            this.pin3.TabIndex = 6;
+            this.pin3.TabIndex = 3;
             this.pin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pin2
@@ -420,7 +420,7 @@
             this.pin2.MaxLength = 1;
             this.pin2.Name = "pin2";
             this.pin2.Size = new System.Drawing.Size(31, 30);
-            this.pin2.TabIndex = 5;
+            this.pin2.TabIndex = 2;
             this.pin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
@@ -441,7 +441,7 @@
             this.pin1.MaxLength = 1;
             this.pin1.Name = "pin1";
             this.pin1.Size = new System.Drawing.Size(31, 30);
-            this.pin1.TabIndex = 4;
+            this.pin1.TabIndex = 1;
             this.pin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
@@ -461,7 +461,7 @@
             this.username.Location = new System.Drawing.Point(331, 179);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(202, 30);
-            this.username.TabIndex = 2;
+            this.username.TabIndex = 0;
             // 
             // StartPage
             // 

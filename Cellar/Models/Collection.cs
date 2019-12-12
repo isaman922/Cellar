@@ -24,5 +24,26 @@ namespace Cellar.Models
         public string LastName { get => lastName; set => lastName = value; }
         public string UserName { get => userName; set => userName = value; }
         public int PinNumber { get => pinNumber; set => pinNumber = value; }
+
+        public Collection(string fName, string lName, string user, int pin)
+        {
+            firstName = fName;
+            lastName = lName;
+            userName = user;
+            pinNumber = pin;
+        }
+
+        public Collection(string fName, string lName, string user, int pin, List<Bottle> list)
+        {
+            firstName = fName;
+            lastName = lName;
+            userName = user;
+            pinNumber = pin;
+
+            foreach (Bottle b in list)
+            {
+                bottles.Add(b);
+            }
+        }
     }
 }

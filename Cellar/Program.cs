@@ -18,8 +18,7 @@ namespace Cellar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Models.Collection bottles = new Models.Collection();
-            Application.Run(new Dashboard(bottles));
+            Application.Run(new StartPage());
         }
     }
 }
