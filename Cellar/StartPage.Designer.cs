@@ -94,6 +94,7 @@
             // signUpPanel
             // 
             this.signUpPanel.BackColor = System.Drawing.Color.Linen;
+            this.signUpPanel.Controls.Add(this.signInPanel);
             this.signUpPanel.Controls.Add(this.showSignIn);
             this.signUpPanel.Controls.Add(this.signUpPIN4B);
             this.signUpPanel.Controls.Add(this.signUpPIN3B);
@@ -119,7 +120,6 @@
             this.signUpPanel.Name = "signUpPanel";
             this.signUpPanel.Size = new System.Drawing.Size(860, 479);
             this.signUpPanel.TabIndex = 17;
-            this.signUpPanel.Visible = false;
             // 
             // showSignIn
             // 
@@ -144,6 +144,7 @@
             this.signUpPIN4B.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN4B.TabIndex = 11;
             this.signUpPIN4B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.signUpPIN4B.TextChanged += new System.EventHandler(this.SignUpPIN4B_TextChanged);
             // 
             // signUpPIN3B
             // 
@@ -154,6 +155,7 @@
             this.signUpPIN3B.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN3B.TabIndex = 10;
             this.signUpPIN3B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.signUpPIN3B.TextChanged += new System.EventHandler(this.SignUpPIN3B_TextChanged);
             // 
             // signUpPIN2B
             // 
@@ -164,6 +166,7 @@
             this.signUpPIN2B.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN2B.TabIndex = 9;
             this.signUpPIN2B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.signUpPIN2B.TextChanged += new System.EventHandler(this.SignUpPIN2B_TextChanged);
             // 
             // signUpPIN1B
             // 
@@ -174,6 +177,7 @@
             this.signUpPIN1B.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN1B.TabIndex = 8;
             this.signUpPIN1B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.signUpPIN1B.TextChanged += new System.EventHandler(this.SignUpPIN1B_TextChanged);
             // 
             // label10
             // 
@@ -257,6 +261,7 @@
             // btnCreateAcct
             // 
             this.btnCreateAcct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            this.btnCreateAcct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateAcct.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateAcct.ForeColor = System.Drawing.Color.Linen;
             this.btnCreateAcct.Location = new System.Drawing.Point(211, 354);
@@ -276,6 +281,7 @@
             this.signUpPIN4A.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN4A.TabIndex = 7;
             this.signUpPIN4A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.signUpPIN4A.TextChanged += new System.EventHandler(this.SignUpPIN4A_TextChanged);
             // 
             // signUpPIN3A
             // 
@@ -286,6 +292,7 @@
             this.signUpPIN3A.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN3A.TabIndex = 6;
             this.signUpPIN3A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.signUpPIN3A.TextChanged += new System.EventHandler(this.SignUpPIN3A_TextChanged);
             // 
             // signUpPIN2A
             // 
@@ -296,6 +303,7 @@
             this.signUpPIN2A.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN2A.TabIndex = 5;
             this.signUpPIN2A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.signUpPIN2A.TextChanged += new System.EventHandler(this.SignUpPIN2A_TextChanged);
             // 
             // label2
             // 
@@ -317,6 +325,7 @@
             this.signUpPIN1A.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN1A.TabIndex = 4;
             this.signUpPIN1A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.signUpPIN1A.TextChanged += new System.EventHandler(this.SignUpPIN1A_TextChanged);
             // 
             // label4
             // 
@@ -350,7 +359,7 @@
             this.signInPanel.Controls.Add(this.pin1);
             this.signInPanel.Controls.Add(this.label15);
             this.signInPanel.Controls.Add(this.username);
-            this.signInPanel.Location = new System.Drawing.Point(11, 192);
+            this.signInPanel.Location = new System.Drawing.Point(0, 0);
             this.signInPanel.Name = "signInPanel";
             this.signInPanel.Size = new System.Drawing.Size(860, 479);
             this.signInPanel.TabIndex = 0;
@@ -383,6 +392,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.Linen;
             this.btnLogin.Location = new System.Drawing.Point(211, 354);
@@ -402,6 +412,7 @@
             this.pin4.Size = new System.Drawing.Size(31, 30);
             this.pin4.TabIndex = 4;
             this.pin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin4.TextChanged += new System.EventHandler(this.Pin4_TextChanged);
             // 
             // pin3
             // 
@@ -412,6 +423,7 @@
             this.pin3.Size = new System.Drawing.Size(31, 30);
             this.pin3.TabIndex = 3;
             this.pin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin3.TextChanged += new System.EventHandler(this.Pin3_TextChanged);
             // 
             // pin2
             // 
@@ -422,6 +434,7 @@
             this.pin2.Size = new System.Drawing.Size(31, 30);
             this.pin2.TabIndex = 2;
             this.pin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin2.TextChanged += new System.EventHandler(this.Pin2_TextChanged);
             // 
             // label14
             // 
@@ -443,6 +456,7 @@
             this.pin1.Size = new System.Drawing.Size(31, 30);
             this.pin1.TabIndex = 1;
             this.pin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin1.TextChanged += new System.EventHandler(this.Pin1_TextChanged);
             // 
             // label15
             // 
@@ -469,7 +483,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(882, 683);
-            this.Controls.Add(this.signInPanel);
             this.Controls.Add(this.signUpPanel);
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
@@ -479,6 +492,7 @@
             this.Name = "StartPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Brotherhood of Bacchus Cellar App";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StartPage_FormClosed);
             this.signUpPanel.ResumeLayout(false);
             this.signUpPanel.PerformLayout();
             this.signInPanel.ResumeLayout(false);
