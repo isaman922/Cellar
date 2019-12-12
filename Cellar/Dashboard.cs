@@ -18,6 +18,7 @@ namespace Cellar
             InitializeComponent();
 
             bottles = collection;
+            subtitle.Text = $"{collection.FirstName} {collection.LastName}'s Cellar";
 
             btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
             btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
