@@ -68,6 +68,5 @@ namespace Cellar.Models
 
             return summary;
         }
-
     }
 }
