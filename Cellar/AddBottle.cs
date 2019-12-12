@@ -50,5 +50,10 @@ namespace Cellar
             stat.Show();
             Hide();
         }
+
+        private void AddBottle_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

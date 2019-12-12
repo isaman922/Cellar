@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Statistics));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBottle));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -163,11 +163,13 @@
             this.subtitle.AutoSize = true;
             this.subtitle.Font = new System.Drawing.Font("Modern No. 20", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitle.ForeColor = System.Drawing.Color.Linen;
-            this.subtitle.Location = new System.Drawing.Point(295, 73);
+            this.subtitle.Location = new System.Drawing.Point(191, 73);
+            this.subtitle.MinimumSize = new System.Drawing.Size(500, 29);
             this.subtitle.Name = "subtitle";
-            this.subtitle.Size = new System.Drawing.Size(293, 29);
+            this.subtitle.Size = new System.Drawing.Size(500, 29);
             this.subtitle.TabIndex = 2;
             this.subtitle.Text = "Daniel Isaman\'s Cellar";
+            this.subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -631,7 +633,7 @@
             this.button4.Text = "Clear";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // Statistics
+            // AddBottle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -644,7 +646,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(898, 722);
             this.MinimumSize = new System.Drawing.Size(898, 722);
-            this.Name = "Statistics";
+            this.Name = "AddBottle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Brotherhood of Bacchus Cellar App";
             this.panel1.ResumeLayout(false);

@@ -124,11 +124,13 @@
             this.subtitle.AutoSize = true;
             this.subtitle.Font = new System.Drawing.Font("Modern No. 20", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitle.ForeColor = System.Drawing.Color.Linen;
-            this.subtitle.Location = new System.Drawing.Point(295, 73);
+            this.subtitle.Location = new System.Drawing.Point(191, 73);
+            this.subtitle.MinimumSize = new System.Drawing.Size(500, 29);
             this.subtitle.Name = "subtitle";
-            this.subtitle.Size = new System.Drawing.Size(293, 29);
+            this.subtitle.Size = new System.Drawing.Size(500, 29);
             this.subtitle.TabIndex = 2;
             this.subtitle.Text = "Daniel Isaman\'s Cellar";
+            this.subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dashboard1
             // 
