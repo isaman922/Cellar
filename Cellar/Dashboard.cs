@@ -23,6 +23,20 @@ namespace Cellar
 
             bottles = collection;
             subtitle.Text = $"{collection.FirstName} {collection.LastName}'s Cellar";
+
+            dashUserLbl.Text = bottles.UserName;
+            dashNameLbl.Text = $"{bottles.FirstName} {bottles.LastName}";
+            dashCellarCount.Text = bottles.BottleCount().ToString();
+            dashCellarValue.Text = $"{bottles.TotalValue().ToString():C}";
+
+            var openQuery = from bottle in bottles.Bottles
+                            where bottle.DrinkByStart <= DateTime.Today.Year
+                            orderby bottle.DrinkByStart descending , bottle.BottleName ascending
+                            select bottle;
+            foreach (Models.Bottle b in openQuery)
+            {
+                listToOpen.Items.Add(b.ToOpenString());
+            }
         }
 
         private void BtnDashboard_Click(object sender, EventArgs e)
@@ -38,8 +52,26 @@ namespace Cellar
             inventoryPanel.Visible = false;
             statsPanel.Visible = false;
 
+            dashUserLbl.Text = bottles.UserName;
+            dashNameLbl.Text = $"{bottles.FirstName} {bottles.LastName}";
+            dashCellarCount.Text = bottles.BottleCount().ToString();
+            dashCellarValue.Text = $"{bottles.TotalValue().ToString():C}";
+
+            var openQuery = from bottle in bottles.Bottles
+                            where bottle.DrinkByStart <= DateTime.Today.Year
+                            orderby bottle.DrinkByStart descending, bottle.BottleName ascending
+                            select bottle;
+            foreach (Models.Bottle b in openQuery)
+            {
+                listToOpen.Items.Add(b.ToOpenString());
+            }
+
             /*Dashboard Panel Fields:
-                *
+                *dashUserLbl- 
+                * dashNameLbl- 
+                * dashCellarCount- 
+                * dashCellarValue- 
+                * listToOpen- 
             */
         }
 
