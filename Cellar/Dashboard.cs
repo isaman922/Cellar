@@ -123,10 +123,21 @@ namespace Cellar
                 * statCountryChart- 
                 * statCategoryChart- 
             */
+
+            statBottleTotal.Text = $"{bottles.BottleCount()}";
+            statValueTotal.Text = $"{bottles.TotalValue():C}";
+            statAvgCost.Text = $"{bottles.AvgBottleCost():C}";
+            statAvgAge.Text = $"{bottles.AvgBottleAge():D2} yrs";
+            statAvgPeak.Text = $"{bottles.AvgPeakYear()}";
+
+            //Update Charts TO DO
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //Update the collection with the bottles, serialize collection
+
+
             Application.Exit();
         }
 
@@ -141,6 +152,68 @@ namespace Cellar
              * Importance
              * Drink-by Window
              * */
+
+            invList.Items.Clear();
+
+            switch (invFilterBy.SelectedText)
+            {
+                case "Vintage":
+                    var vintQuery = from bottle in bottles.Bottles
+                                    orderby bottle.Vintage descending
+                                    select bottle;
+                    foreach (Models.Bottle b in vintQuery)
+                    {
+                        invList.Items.Add(b.ToString());
+                    }
+                    break;
+                case "Name":
+                    var nameQuery = from bottle in bottles.Bottles
+                                    orderby bottle.BottleName ascending
+                                    select bottle;
+                    foreach (Models.Bottle b in nameQuery)
+                    {
+                        invList.Items.Add(b.ToString());
+                    }
+                    break;
+                case "Country":
+                    var originQuery = from bottle in bottles.Bottles
+                                      orderby bottle.Country ascending
+                                      select bottle;
+                    foreach (Models.Bottle b in originQuery)
+                    {
+                        invList.Items.Add(b.ToString());
+                    }
+                    break;
+                case "Category":
+                    var typeQuery = from bottle in bottles.Bottles
+                                    orderby bottle.TypeCode ascending
+                                    select bottle;
+                    foreach (Models.Bottle b in typeQuery)
+                    {
+                        invList.Items.Add(b.ToString());
+                    }
+                    break;
+                case "Importance":
+                    var importanceQuery = from bottle in bottles.Bottles
+                                          orderby bottle.ImportanceCode ascending
+                                          select bottle;
+                    foreach (Models.Bottle b in importanceQuery)
+                    {
+                        invList.Items.Add(b.ToString());
+                    }
+                    break;
+                case "Drink-by Window":
+                    var drinkQuery = from bottle in bottles.Bottles
+                                     orderby bottle.DrinkByStart ascending
+                                     select bottle;
+                    foreach (Models.Bottle b in drinkQuery)
+                    {
+                        invList.Items.Add(b.ToString());
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void InvList_DoubleClick(object sender, EventArgs e)

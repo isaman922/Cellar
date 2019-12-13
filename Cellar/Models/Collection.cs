@@ -49,10 +49,7 @@ namespace Cellar.Models
         public int BottleCount()
         {
             //Retrieve and return number of bottles in collection
-            int count = 0;
-
-            //TO DO
-
+            int count = bottles.Count;
             return count;
         }
 
@@ -61,7 +58,10 @@ namespace Cellar.Models
             //Retrieve and return total value of the bottles in the collection
             decimal sum = 0;
 
-            //TO DO
+            foreach (Bottle b in  bottles)
+            {
+                sum += b.Cost;
+            }
 
             return sum;
         }
@@ -69,19 +69,21 @@ namespace Cellar.Models
         public decimal AvgBottleCost()
         {
             //Retrieve and return average cost of a bottle in the collection
-            decimal cost = 0;
-
-            //TO DO
-
+            decimal cost = TotalValue() / BottleCount();
             return cost;
         }
 
         public double AvgBottleAge()
         {
             //Retrieve and return average age of a bottle in the collection
-            double age = 0;
+            double totalAge = 0;
 
-            //TO DO
+            foreach (Bottle b in bottles)
+            {
+                totalAge += (DateTime.Today.Year - b.Vintage);
+            }
+
+            double age = totalAge / BottleCount();
 
             return age;
         }
@@ -89,9 +91,14 @@ namespace Cellar.Models
         public int AvgPeakYear()
         {
             //Retrieve and return average peak drinking year of a bottle in the collection
-            int year = 0;
+            int totalYear = 0;
 
-            //TO DO
+            foreach (Bottle b in bottles)
+            {
+                totalYear += b.DrinkByPeak;
+            }
+
+            int year = totalYear / BottleCount();
 
             return year;
         }
@@ -101,7 +108,20 @@ namespace Cellar.Models
             //Retrieve and return 2-dimensional array of country and number of bottles from that country
             List<string[]> stats = new List<string[]>();
 
-            //TO DO
+            foreach (Bottle b in bottles)
+            {
+                foreach (var entry in stats)
+                {
+                    if (b.Country == entry[0])
+                    {
+                        entry[1] = (Convert.ToInt32(entry[1]) + 1).ToString();
+                    }
+                    else
+                    {
+                        stats.Add(new string[] { b.Country, "1" });
+                    }
+                }
+            }
 
             return stats;
         }
@@ -109,9 +129,12 @@ namespace Cellar.Models
         public int[] CategoryBreakdown()
         {
             //Retrieve and return array of number of bottles in each category 0-7
-            int[] stats = new int[8];
+            int[] stats = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
 
-            //TO DO
+            foreach (Bottle b in bottles)
+            {
+                stats[b.TypeCode]++;
+            }
 
             return stats;
         }
