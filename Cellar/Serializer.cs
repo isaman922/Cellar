@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace Cellar
 {
@@ -38,18 +42,34 @@ namespace Cellar
 
         public static string SerializeCollection(Models.Collection cellar)
         {
-            string data = "";
+            //Setup memory string to hold the object in memory format and transform process.
+            MemoryStream myStream = new MemoryStream();
 
-            //TO DO
+            //Set up the binary formater for serialization.
+            BinaryFormatter myFormater = new BinaryFormatter();
+
+            myFormater.Serialize(myStream, cellar);
+            //Convert to 64 bit data
+            string data = Convert.ToBase64String(myStream.ToArray());
+
+            myStream.Close();
 
             return data;
         }
 
         public static string SerializePhoto(System.Drawing.Image img)
         {
-            string data = "";
+            //Setup memory string to hold the object in memory format and transform process.
+            MemoryStream myStream = new MemoryStream();
 
-            //TO DO
+            //Set up the binary formater for serialization.
+            BinaryFormatter myFormater = new BinaryFormatter();
+
+            myFormater.Serialize(myStream, img);
+            //Convert to 64 bit data
+            string data = Convert.ToBase64String(myStream.ToArray());
+
+            myStream.Close();
 
             return data;
         }
@@ -59,6 +79,16 @@ namespace Cellar
             Models.Collection cellar = null;
 
             //TO DO
+
+            
+
+            
+
+
+
+
+
+
 
             return cellar;
         }

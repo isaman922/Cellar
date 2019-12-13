@@ -24,9 +24,7 @@ namespace Cellar
         private void GetData()
         {
             //Get's collections and adds them to the data list
-
-            //TO TEST
-            data.Add(new Models.Collection("Test", "Person", "test", 1234));
+            data = Serializer.GetCollections();
         }
 
         private void BtnCreateAcct_Click(object sender, EventArgs e)
