@@ -220,61 +220,29 @@ namespace Cellar
             switch (invFilterBy.SelectedText)
             {
                 case "Vintage":
-                    var vintQuery = from bottle in bottles.Bottles
-                                    orderby bottle.Vintage descending
-                                    select bottle;
-                    foreach (Models.Bottle b in vintQuery)
-                    {
-                        invList.Items.Add(b.ToString());
-                    }
+                    bottles.Bottles = bottles.Bottles.OrderByDescending(o => o.Vintage).ToList();
                     break;
                 case "Name":
-                    var nameQuery = from bottle in bottles.Bottles
-                                    orderby bottle.BottleName ascending
-                                    select bottle;
-                    foreach (Models.Bottle b in nameQuery)
-                    {
-                        invList.Items.Add(b.ToString());
-                    }
+                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.BottleName).ToList();
                     break;
                 case "Country":
-                    var originQuery = from bottle in bottles.Bottles
-                                      orderby bottle.Country ascending
-                                      select bottle;
-                    foreach (Models.Bottle b in originQuery)
-                    {
-                        invList.Items.Add(b.ToString());
-                    }
+                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.Country).ToList();
                     break;
                 case "Category":
-                    var typeQuery = from bottle in bottles.Bottles
-                                    orderby bottle.TypeCode ascending
-                                    select bottle;
-                    foreach (Models.Bottle b in typeQuery)
-                    {
-                        invList.Items.Add(b.ToString());
-                    }
+                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.TypeCode).ToList();
                     break;
                 case "Importance":
-                    var importanceQuery = from bottle in bottles.Bottles
-                                          orderby bottle.ImportanceCode ascending
-                                          select bottle;
-                    foreach (Models.Bottle b in importanceQuery)
-                    {
-                        invList.Items.Add(b.ToString());
-                    }
+                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.ImportanceCode).ToList();
                     break;
                 case "Drink-by Window":
-                    var drinkQuery = from bottle in bottles.Bottles
-                                     orderby bottle.DrinkByStart ascending
-                                     select bottle;
-                    foreach (Models.Bottle b in drinkQuery)
-                    {
-                        invList.Items.Add(b.ToString());
-                    }
+                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.DrinkByStart).ToList();
                     break;
                 default:
                     break;
+            }
+            foreach (Models.Bottle b in bottles.Bottles)
+            {
+                invList.Items.Add(b.ToString());
             }
         }
 
@@ -334,8 +302,15 @@ namespace Cellar
             }
             else
             {
-                //Upload the picture
-                addLabelPicture.ImageLocation = openFileDialog.FileName;
+                try
+                {
+                    //Upload the picture
+                    addLabelPicture.ImageLocation = openFileDialog.FileName;
+                }
+                catch
+                {
+                    MessageBox.Show("Picture could not be uploaded. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
