@@ -78,17 +78,24 @@ namespace Cellar
         {
             Models.Collection cellar = null;
 
-            //TO DO
+            //Set up the binary formater for serialization.
+            BinaryFormatter bf = new BinaryFormatter();
 
-            
+            //Convert the base64 string to an array of bytes to pass to the memory stream
+            byte[] b = Convert.FromBase64String(data);
 
-            
+            //Setup memory string to hold the object in memory format and transform process.
+            MemoryStream ms = new MemoryStream(b);
 
-
-
-
-
-
+            //Deserialize
+            try
+            {
+                cellar = (Models.Collection)bf.Deserialize(ms);
+            }
+            finally
+            {
+                ms.Close();
+            }
 
             return cellar;
         }
@@ -97,7 +104,24 @@ namespace Cellar
         {
             System.Drawing.Image img = null;
 
-            //TO DO
+            //Set up the binary formater for serialization.
+            BinaryFormatter bf = new BinaryFormatter();
+
+            //Convert the base64 string to an array of bytes to pass to the memory stream
+            byte[] b = Convert.FromBase64String(data);
+
+            //Setup memory string to hold the object in memory format and transform process.
+            MemoryStream ms = new MemoryStream(b);
+
+            //Deserialize
+            try
+            {
+                img = (System.Drawing.Image)bf.Deserialize(ms);
+            }
+            finally
+            {
+                ms.Close();
+            }
 
             return img;
         }

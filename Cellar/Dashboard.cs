@@ -324,7 +324,19 @@ namespace Cellar
         private void BtnUploadLabel_Click(object sender, EventArgs e)
         {
             //Run the openFileDialog and retrieve label picture to input as the pic
-            //TO DO
+
+            openFileDialog.Filter = "Image Files | *.gif, *.jpg, *.jpeg, *.bmp, *.png";
+            DialogResult clicked = openFileDialog.ShowDialog();
+
+            if (clicked == DialogResult.Cancel)
+            {
+                return;
+            }
+            else
+            {
+                //Upload the picture
+                addLabelPicture.ImageLocation = openFileDialog.FileName;
+            }
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
