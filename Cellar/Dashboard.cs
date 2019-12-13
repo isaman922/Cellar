@@ -356,5 +356,150 @@ namespace Cellar
         {
             addRatingCritic.ForeColor = System.Drawing.SystemColors.WindowText;
         }
+
+        private void BtnEditUser_Click(object sender, EventArgs e)
+        {
+            //Brings up validation panel
+            pnlUserMain.Visible = false;
+            pnlUserPIN.Visible = true;
+        }
+
+        private void BtnSaveUser_Click(object sender, EventArgs e)
+        {
+            //Save Name, Username, and PIN, then show main user panel
+            try
+            {
+                if ((newPIN1.Text + newPIN2.Text + newPIN3.Text + newPIN4.Text) != (confirm1.Text + confirm2.Text + confirm3.Text + confirm4.Text))
+                {
+                    MessageBox.Show("The PINs you have entered do not match.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (newPIN1.Text == ""|| newPIN2.Text == "" || newPIN3.Text == "" || newPIN4.Text == "" ||
+                    firstName.Text == "" || lastName.Text == "" || username.Text == "")
+                {
+                    MessageBox.Show("Please complete all fields.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    bottles.FirstName = firstName.Text;
+                    bottles.LastName = lastName.Text;
+                    bottles.UserName = username.Text;
+                    bottles.PinNumber = Convert.ToInt32(newPIN1.Text + newPIN2.Text + newPIN3.Text + newPIN4.Text);
+                    pnlUserMain.Visible = true;
+                    pnlUserEdit.Visible = false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("The values you have entered are not allowed.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnSubmitUser_Click(object sender, EventArgs e)
+        {
+            //If PIN is correct, show change panel, and set current values to fields. Otherwise, show user panel
+            try
+            {
+                if (Convert.ToInt32(pin1.Text + pin2.Text + pin3.Text + pin4.Text) == bottles.PinNumber)
+                {
+                    pnlUserEdit.Visible = true;
+                    pnlUserPIN.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("The PIN number you have entered is inccorect.", "Incorrect PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    pnlUserMain.Visible = true;
+                    pnlUserPIN.Visible = false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("The PIN number you have entered is inccorect.", "Incorrect PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                pnlUserMain.Visible = true;
+                pnlUserPIN.Visible = false;
+            }
+        }
+
+        private void BtnCancelUser_Click(object sender, EventArgs e)
+        {
+            //Show the main user panel without making changes
+            pnlUserMain.Visible = true;
+            pnlUserEdit.Visible = false;
+        }
+
+        private void NewPIN1_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(newPIN1);
+        }
+
+        private void NewPIN2_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(newPIN2);
+        }
+
+        private void NewPIN3_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(newPIN3);
+        }
+
+        private void NewPIN4_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(newPIN4);
+        }
+
+        private void NewPIN1_Enter(object sender, EventArgs e)
+        {
+            // Clear all of the items from the textboxes
+            newPIN1.Text = newPIN2.Text = newPIN3.Text = newPIN4.Text = "";
+        }
+
+        private void Confirm1_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(confirm1);
+        }
+
+        private void Confirm2_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(confirm2);
+        }
+
+        private void Confirm3_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(confirm3);
+        }
+
+        private void Confirm4_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(confirm4);
+        }
+
+        private void Confirm1_Enter(object sender, EventArgs e)
+        {
+            // Clear all of the items from the textboxes
+            confirm1.Text = confirm2.Text = confirm3.Text = confirm4.Text = "";
+        }
+        public void MoveCursor(TextBox txt)
+        {
+            if (txt.Text != "") { SelectNextControl(txt, true, false, true, false); }
+        }
+
+        private void Pin1_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(pin1);
+        }
+
+        private void Pin2_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(pin2);
+        }
+
+        private void Pin3_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(pin3);
+        }
+
+        private void Pin4_TextChanged(object sender, EventArgs e)
+        {
+            MoveCursor(pin4);
+        }
     }
 }

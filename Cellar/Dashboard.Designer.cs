@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -43,10 +43,48 @@
             this.title = new System.Windows.Forms.Label();
             this.subtitle = new System.Windows.Forms.Label();
             this.dashboardPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.pnlUserPIN = new System.Windows.Forms.Panel();
+            this.pin4 = new System.Windows.Forms.TextBox();
+            this.pin3 = new System.Windows.Forms.TextBox();
+            this.pin2 = new System.Windows.Forms.TextBox();
+            this.pin1 = new System.Windows.Forms.TextBox();
+            this.btnSubmitUser = new System.Windows.Forms.Button();
+            this.label55 = new System.Windows.Forms.Label();
+            this.pnlUserEdit = new System.Windows.Forms.Panel();
+            this.firstName = new System.Windows.Forms.TextBox();
+            this.lastName = new System.Windows.Forms.TextBox();
+            this.username = new System.Windows.Forms.TextBox();
+            this.confirm4 = new System.Windows.Forms.TextBox();
+            this.confirm3 = new System.Windows.Forms.TextBox();
+            this.confirm2 = new System.Windows.Forms.TextBox();
+            this.confirm1 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.newPIN4 = new System.Windows.Forms.TextBox();
+            this.newPIN3 = new System.Windows.Forms.TextBox();
+            this.newPIN2 = new System.Windows.Forms.TextBox();
+            this.newPIN1 = new System.Windows.Forms.TextBox();
+            this.btnSaveUser = new System.Windows.Forms.Button();
+            this.btnCancelUser = new System.Windows.Forms.Button();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.pnlUserMain = new System.Windows.Forms.Panel();
+            this.btnEditUser = new System.Windows.Forms.Button();
+            this.pin = new System.Windows.Forms.Label();
+            this.dashUserLbl = new System.Windows.Forms.Label();
+            this.dashNameLbl = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.addPanel = new System.Windows.Forms.Panel();
             this.addCost = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -111,6 +149,9 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.dashboardPanel.SuspendLayout();
+            this.pnlUserPIN.SuspendLayout();
+            this.pnlUserEdit.SuspendLayout();
+            this.pnlUserMain.SuspendLayout();
             this.addPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addLabelPicture)).BeginInit();
@@ -215,20 +256,517 @@
             // dashboardPanel
             // 
             this.dashboardPanel.BackColor = System.Drawing.Color.Linen;
+            this.dashboardPanel.Controls.Add(this.pnlUserMain);
+            this.dashboardPanel.Controls.Add(this.label27);
+            this.dashboardPanel.Controls.Add(this.label28);
+            this.dashboardPanel.Controls.Add(this.label29);
+            this.dashboardPanel.Controls.Add(this.label30);
             this.dashboardPanel.Controls.Add(this.label1);
             this.dashboardPanel.Controls.Add(this.listBox1);
-            this.dashboardPanel.Controls.Add(this.label8);
-            this.dashboardPanel.Controls.Add(this.label7);
+            this.dashboardPanel.Controls.Add(this.pnlUserEdit);
+            this.dashboardPanel.Controls.Add(this.pnlUserPIN);
             this.dashboardPanel.Location = new System.Drawing.Point(280, 122);
             this.dashboardPanel.Name = "dashboardPanel";
             this.dashboardPanel.Size = new System.Drawing.Size(590, 549);
             this.dashboardPanel.TabIndex = 1;
             // 
+            // pnlUserPIN
+            // 
+            this.pnlUserPIN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlUserPIN.Controls.Add(this.pin4);
+            this.pnlUserPIN.Controls.Add(this.pin3);
+            this.pnlUserPIN.Controls.Add(this.pin2);
+            this.pnlUserPIN.Controls.Add(this.pin1);
+            this.pnlUserPIN.Controls.Add(this.btnSubmitUser);
+            this.pnlUserPIN.Controls.Add(this.label55);
+            this.pnlUserPIN.Location = new System.Drawing.Point(369, 18);
+            this.pnlUserPIN.Name = "pnlUserPIN";
+            this.pnlUserPIN.Size = new System.Drawing.Size(200, 213);
+            this.pnlUserPIN.TabIndex = 29;
+            this.pnlUserPIN.Visible = false;
+            // 
+            // pin4
+            // 
+            this.pin4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin4.Location = new System.Drawing.Point(136, 93);
+            this.pin4.MaximumSize = new System.Drawing.Size(28, 28);
+            this.pin4.MaxLength = 1;
+            this.pin4.MinimumSize = new System.Drawing.Size(28, 28);
+            this.pin4.Name = "pin4";
+            this.pin4.PasswordChar = '*';
+            this.pin4.Size = new System.Drawing.Size(28, 28);
+            this.pin4.TabIndex = 36;
+            this.pin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin4.TextChanged += new System.EventHandler(this.Pin4_TextChanged);
+            // 
+            // pin3
+            // 
+            this.pin3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin3.Location = new System.Drawing.Point(102, 93);
+            this.pin3.MaximumSize = new System.Drawing.Size(28, 28);
+            this.pin3.MaxLength = 1;
+            this.pin3.MinimumSize = new System.Drawing.Size(28, 28);
+            this.pin3.Name = "pin3";
+            this.pin3.PasswordChar = '*';
+            this.pin3.Size = new System.Drawing.Size(28, 28);
+            this.pin3.TabIndex = 35;
+            this.pin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin3.TextChanged += new System.EventHandler(this.Pin3_TextChanged);
+            // 
+            // pin2
+            // 
+            this.pin2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin2.Location = new System.Drawing.Point(68, 93);
+            this.pin2.MaximumSize = new System.Drawing.Size(28, 28);
+            this.pin2.MaxLength = 1;
+            this.pin2.MinimumSize = new System.Drawing.Size(28, 28);
+            this.pin2.Name = "pin2";
+            this.pin2.PasswordChar = '*';
+            this.pin2.Size = new System.Drawing.Size(28, 28);
+            this.pin2.TabIndex = 34;
+            this.pin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin2.TextChanged += new System.EventHandler(this.Pin2_TextChanged);
+            // 
+            // pin1
+            // 
+            this.pin1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin1.Location = new System.Drawing.Point(34, 93);
+            this.pin1.MaximumSize = new System.Drawing.Size(28, 28);
+            this.pin1.MaxLength = 1;
+            this.pin1.MinimumSize = new System.Drawing.Size(28, 28);
+            this.pin1.Name = "pin1";
+            this.pin1.PasswordChar = '*';
+            this.pin1.Size = new System.Drawing.Size(28, 28);
+            this.pin1.TabIndex = 33;
+            this.pin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin1.TextChanged += new System.EventHandler(this.Pin1_TextChanged);
+            // 
+            // btnSubmitUser
+            // 
+            this.btnSubmitUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            this.btnSubmitUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmitUser.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitUser.ForeColor = System.Drawing.Color.Linen;
+            this.btnSubmitUser.Location = new System.Drawing.Point(62, 185);
+            this.btnSubmitUser.Name = "btnSubmitUser";
+            this.btnSubmitUser.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmitUser.TabIndex = 32;
+            this.btnSubmitUser.Text = "Submit";
+            this.btnSubmitUser.UseVisualStyleBackColor = false;
+            this.btnSubmitUser.Click += new System.EventHandler(this.BtnSubmitUser_Click);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(33, 5);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(132, 21);
+            this.label55.TabIndex = 25;
+            this.label55.Text = "Enter your PIN";
+            // 
+            // pnlUserEdit
+            // 
+            this.pnlUserEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlUserEdit.Controls.Add(this.firstName);
+            this.pnlUserEdit.Controls.Add(this.lastName);
+            this.pnlUserEdit.Controls.Add(this.username);
+            this.pnlUserEdit.Controls.Add(this.confirm4);
+            this.pnlUserEdit.Controls.Add(this.confirm3);
+            this.pnlUserEdit.Controls.Add(this.confirm2);
+            this.pnlUserEdit.Controls.Add(this.confirm1);
+            this.pnlUserEdit.Controls.Add(this.label43);
+            this.pnlUserEdit.Controls.Add(this.label42);
+            this.pnlUserEdit.Controls.Add(this.newPIN4);
+            this.pnlUserEdit.Controls.Add(this.newPIN3);
+            this.pnlUserEdit.Controls.Add(this.newPIN2);
+            this.pnlUserEdit.Controls.Add(this.newPIN1);
+            this.pnlUserEdit.Controls.Add(this.btnSaveUser);
+            this.pnlUserEdit.Controls.Add(this.btnCancelUser);
+            this.pnlUserEdit.Controls.Add(this.label45);
+            this.pnlUserEdit.Controls.Add(this.label46);
+            this.pnlUserEdit.Controls.Add(this.label47);
+            this.pnlUserEdit.Controls.Add(this.label48);
+            this.pnlUserEdit.Location = new System.Drawing.Point(369, 18);
+            this.pnlUserEdit.Name = "pnlUserEdit";
+            this.pnlUserEdit.Size = new System.Drawing.Size(200, 213);
+            this.pnlUserEdit.TabIndex = 33;
+            this.pnlUserEdit.Visible = false;
+            // 
+            // firstName
+            // 
+            this.firstName.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName.Location = new System.Drawing.Point(88, 34);
+            this.firstName.Name = "firstName";
+            this.firstName.Size = new System.Drawing.Size(100, 25);
+            this.firstName.TabIndex = 49;
+            // 
+            // lastName
+            // 
+            this.lastName.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName.Location = new System.Drawing.Point(88, 65);
+            this.lastName.Name = "lastName";
+            this.lastName.Size = new System.Drawing.Size(100, 25);
+            this.lastName.TabIndex = 48;
+            // 
+            // username
+            // 
+            this.username.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.Location = new System.Drawing.Point(88, 96);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(100, 25);
+            this.username.TabIndex = 47;
+            // 
+            // confirm4
+            // 
+            this.confirm4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirm4.Location = new System.Drawing.Point(163, 158);
+            this.confirm4.MaximumSize = new System.Drawing.Size(25, 25);
+            this.confirm4.MaxLength = 1;
+            this.confirm4.MinimumSize = new System.Drawing.Size(25, 25);
+            this.confirm4.Name = "confirm4";
+            this.confirm4.PasswordChar = '*';
+            this.confirm4.Size = new System.Drawing.Size(25, 25);
+            this.confirm4.TabIndex = 46;
+            this.confirm4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.confirm4.TextChanged += new System.EventHandler(this.Confirm4_TextChanged);
+            // 
+            // confirm3
+            // 
+            this.confirm3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirm3.Location = new System.Drawing.Point(136, 158);
+            this.confirm3.MaximumSize = new System.Drawing.Size(25, 25);
+            this.confirm3.MaxLength = 1;
+            this.confirm3.MinimumSize = new System.Drawing.Size(25, 25);
+            this.confirm3.Name = "confirm3";
+            this.confirm3.PasswordChar = '*';
+            this.confirm3.Size = new System.Drawing.Size(25, 25);
+            this.confirm3.TabIndex = 45;
+            this.confirm3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.confirm3.TextChanged += new System.EventHandler(this.Confirm3_TextChanged);
+            // 
+            // confirm2
+            // 
+            this.confirm2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirm2.Location = new System.Drawing.Point(109, 158);
+            this.confirm2.MaximumSize = new System.Drawing.Size(25, 25);
+            this.confirm2.MaxLength = 1;
+            this.confirm2.MinimumSize = new System.Drawing.Size(25, 25);
+            this.confirm2.Name = "confirm2";
+            this.confirm2.PasswordChar = '*';
+            this.confirm2.Size = new System.Drawing.Size(25, 25);
+            this.confirm2.TabIndex = 44;
+            this.confirm2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.confirm2.TextChanged += new System.EventHandler(this.Confirm2_TextChanged);
+            // 
+            // confirm1
+            // 
+            this.confirm1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirm1.Location = new System.Drawing.Point(82, 158);
+            this.confirm1.MaximumSize = new System.Drawing.Size(25, 25);
+            this.confirm1.MaxLength = 1;
+            this.confirm1.MinimumSize = new System.Drawing.Size(25, 25);
+            this.confirm1.Name = "confirm1";
+            this.confirm1.PasswordChar = '*';
+            this.confirm1.Size = new System.Drawing.Size(25, 25);
+            this.confirm1.TabIndex = 43;
+            this.confirm1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.confirm1.TextChanged += new System.EventHandler(this.Confirm1_TextChanged);
+            this.confirm1.Enter += new System.EventHandler(this.Confirm1_Enter);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(10, 161);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(62, 18);
+            this.label43.TabIndex = 42;
+            this.label43.Text = "Confirm";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(10, 68);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(78, 18);
+            this.label42.TabIndex = 41;
+            this.label42.Text = "Last Name";
+            // 
+            // newPIN4
+            // 
+            this.newPIN4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPIN4.Location = new System.Drawing.Point(163, 127);
+            this.newPIN4.MaximumSize = new System.Drawing.Size(25, 25);
+            this.newPIN4.MaxLength = 1;
+            this.newPIN4.MinimumSize = new System.Drawing.Size(25, 25);
+            this.newPIN4.Name = "newPIN4";
+            this.newPIN4.PasswordChar = '*';
+            this.newPIN4.Size = new System.Drawing.Size(25, 25);
+            this.newPIN4.TabIndex = 40;
+            this.newPIN4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.newPIN4.TextChanged += new System.EventHandler(this.NewPIN4_TextChanged);
+            // 
+            // newPIN3
+            // 
+            this.newPIN3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPIN3.Location = new System.Drawing.Point(136, 127);
+            this.newPIN3.MaximumSize = new System.Drawing.Size(25, 25);
+            this.newPIN3.MaxLength = 1;
+            this.newPIN3.MinimumSize = new System.Drawing.Size(25, 25);
+            this.newPIN3.Name = "newPIN3";
+            this.newPIN3.PasswordChar = '*';
+            this.newPIN3.Size = new System.Drawing.Size(25, 25);
+            this.newPIN3.TabIndex = 39;
+            this.newPIN3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.newPIN3.TextChanged += new System.EventHandler(this.NewPIN3_TextChanged);
+            // 
+            // newPIN2
+            // 
+            this.newPIN2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPIN2.Location = new System.Drawing.Point(109, 127);
+            this.newPIN2.MaximumSize = new System.Drawing.Size(25, 25);
+            this.newPIN2.MaxLength = 1;
+            this.newPIN2.MinimumSize = new System.Drawing.Size(25, 25);
+            this.newPIN2.Name = "newPIN2";
+            this.newPIN2.PasswordChar = '*';
+            this.newPIN2.Size = new System.Drawing.Size(25, 25);
+            this.newPIN2.TabIndex = 38;
+            this.newPIN2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.newPIN2.TextChanged += new System.EventHandler(this.NewPIN2_TextChanged);
+            // 
+            // newPIN1
+            // 
+            this.newPIN1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPIN1.Location = new System.Drawing.Point(82, 127);
+            this.newPIN1.MaximumSize = new System.Drawing.Size(25, 25);
+            this.newPIN1.MaxLength = 1;
+            this.newPIN1.MinimumSize = new System.Drawing.Size(25, 25);
+            this.newPIN1.Name = "newPIN1";
+            this.newPIN1.PasswordChar = '*';
+            this.newPIN1.Size = new System.Drawing.Size(25, 25);
+            this.newPIN1.TabIndex = 37;
+            this.newPIN1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.newPIN1.TextChanged += new System.EventHandler(this.NewPIN1_TextChanged);
+            this.newPIN1.Enter += new System.EventHandler(this.NewPIN1_Enter);
+            // 
+            // btnSaveUser
+            // 
+            this.btnSaveUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            this.btnSaveUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveUser.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveUser.ForeColor = System.Drawing.Color.Linen;
+            this.btnSaveUser.Location = new System.Drawing.Point(17, 185);
+            this.btnSaveUser.Name = "btnSaveUser";
+            this.btnSaveUser.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveUser.TabIndex = 33;
+            this.btnSaveUser.Text = "Save";
+            this.btnSaveUser.UseVisualStyleBackColor = false;
+            this.btnSaveUser.Click += new System.EventHandler(this.BtnSaveUser_Click);
+            // 
+            // btnCancelUser
+            // 
+            this.btnCancelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            this.btnCancelUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelUser.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelUser.ForeColor = System.Drawing.Color.Linen;
+            this.btnCancelUser.Location = new System.Drawing.Point(106, 185);
+            this.btnCancelUser.Name = "btnCancelUser";
+            this.btnCancelUser.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelUser.TabIndex = 32;
+            this.btnCancelUser.Text = "Cancel";
+            this.btnCancelUser.UseVisualStyleBackColor = false;
+            this.btnCancelUser.Click += new System.EventHandler(this.BtnCancelUser_Click);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(10, 130);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(36, 18);
+            this.label45.TabIndex = 28;
+            this.label45.Text = "PIN";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(10, 99);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(71, 18);
+            this.label46.TabIndex = 27;
+            this.label46.Text = "Username";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(10, 37);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(81, 18);
+            this.label47.TabIndex = 26;
+            this.label47.Text = "First Name";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(57, 5);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(84, 21);
+            this.label48.TabIndex = 25;
+            this.label48.Text = "Edit User";
+            // 
+            // pnlUserMain
+            // 
+            this.pnlUserMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlUserMain.Controls.Add(this.btnEditUser);
+            this.pnlUserMain.Controls.Add(this.pin);
+            this.pnlUserMain.Controls.Add(this.dashUserLbl);
+            this.pnlUserMain.Controls.Add(this.dashNameLbl);
+            this.pnlUserMain.Controls.Add(this.label34);
+            this.pnlUserMain.Controls.Add(this.label31);
+            this.pnlUserMain.Controls.Add(this.label8);
+            this.pnlUserMain.Controls.Add(this.label7);
+            this.pnlUserMain.Location = new System.Drawing.Point(369, 18);
+            this.pnlUserMain.Name = "pnlUserMain";
+            this.pnlUserMain.Size = new System.Drawing.Size(200, 213);
+            this.pnlUserMain.TabIndex = 27;
+            // 
+            // btnEditUser
+            // 
+            this.btnEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            this.btnEditUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditUser.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditUser.ForeColor = System.Drawing.Color.Linen;
+            this.btnEditUser.Location = new System.Drawing.Point(120, 185);
+            this.btnEditUser.Name = "btnEditUser";
+            this.btnEditUser.Size = new System.Drawing.Size(75, 23);
+            this.btnEditUser.TabIndex = 32;
+            this.btnEditUser.Text = "Edit";
+            this.btnEditUser.UseVisualStyleBackColor = false;
+            this.btnEditUser.Click += new System.EventHandler(this.BtnEditUser_Click);
+            // 
+            // pin
+            // 
+            this.pin.AutoSize = true;
+            this.pin.Font = new System.Drawing.Font("Pristina", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin.Location = new System.Drawing.Point(26, 158);
+            this.pin.MinimumSize = new System.Drawing.Size(160, 29);
+            this.pin.Name = "pin";
+            this.pin.Size = new System.Drawing.Size(160, 29);
+            this.pin.TabIndex = 31;
+            this.pin.Text = "****";
+            // 
+            // dashUserLbl
+            // 
+            this.dashUserLbl.AutoSize = true;
+            this.dashUserLbl.Font = new System.Drawing.Font("Pristina", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashUserLbl.Location = new System.Drawing.Point(26, 102);
+            this.dashUserLbl.MinimumSize = new System.Drawing.Size(160, 29);
+            this.dashUserLbl.Name = "dashUserLbl";
+            this.dashUserLbl.Size = new System.Drawing.Size(160, 29);
+            this.dashUserLbl.TabIndex = 30;
+            this.dashUserLbl.Text = "Username";
+            // 
+            // dashNameLbl
+            // 
+            this.dashNameLbl.AutoSize = true;
+            this.dashNameLbl.Font = new System.Drawing.Font("Pristina", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashNameLbl.Location = new System.Drawing.Point(26, 54);
+            this.dashNameLbl.MinimumSize = new System.Drawing.Size(160, 29);
+            this.dashNameLbl.Name = "dashNameLbl";
+            this.dashNameLbl.Size = new System.Drawing.Size(160, 29);
+            this.dashNameLbl.TabIndex = 29;
+            this.dashNameLbl.Text = "Name";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(7, 133);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(36, 18);
+            this.label34.TabIndex = 28;
+            this.label34.Text = "PIN";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(7, 85);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(71, 18);
+            this.label31.TabIndex = 27;
+            this.label31.Text = "Username";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(7, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 18);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(46, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 21);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "User Details";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(22, 119);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(84, 18);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "Total Value";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(22, 23);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(92, 18);
+            this.label28.TabIndex = 21;
+            this.label28.Text = "Total Bottles";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Pristina", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(39, 137);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(177, 63);
+            this.label29.TabIndex = 24;
+            this.label29.Text = "$3081.25";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Pristina", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(39, 26);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(67, 63);
+            this.label30.TabIndex = 23;
+            this.label30.Text = "37";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 271);
+            this.label1.Location = new System.Drawing.Point(22, 271);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 18);
             this.label1.TabIndex = 20;
@@ -243,30 +781,10 @@
             this.listBox1.Items.AddRange(new object[] {
             "Place all bottles in in the drink-by window here:",
             "2010 Chateau Pape Clement, Drink 2035 - 2055 (Peak 2050)"});
-            this.listBox1.Location = new System.Drawing.Point(53, 292);
+            this.listBox1.Location = new System.Drawing.Point(25, 292);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(487, 94);
+            this.listBox1.Size = new System.Drawing.Size(544, 238);
             this.listBox1.TabIndex = 19;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(386, 163);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 18);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Total Value";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(77, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 18);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Total Bottles";
             // 
             // addPanel
             // 
@@ -937,11 +1455,11 @@
             // statCategoryChart
             // 
             this.statCategoryChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.statCategoryChart.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Name = "Legend1";
-            this.statCategoryChart.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.statCategoryChart.ChartAreas.Add(chartArea5);
+            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend5.Name = "Legend1";
+            this.statCategoryChart.Legends.Add(legend5);
             this.statCategoryChart.Location = new System.Drawing.Point(308, 237);
             this.statCategoryChart.Name = "statCategoryChart";
             this.statCategoryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -954,11 +1472,11 @@
         System.Drawing.Color.Green,
         System.Drawing.Color.Purple,
         System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))))};
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.statCategoryChart.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.statCategoryChart.Series.Add(series5);
             this.statCategoryChart.Size = new System.Drawing.Size(264, 300);
             this.statCategoryChart.TabIndex = 14;
             this.statCategoryChart.Text = "chart2";
@@ -966,19 +1484,19 @@
             // statCountryChart
             // 
             this.statCountryChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.statCountryChart.ChartAreas.Add(chartArea2);
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.statCountryChart.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.statCountryChart.ChartAreas.Add(chartArea6);
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend6.Name = "Legend1";
+            this.statCountryChart.Legends.Add(legend6);
             this.statCountryChart.Location = new System.Drawing.Point(15, 237);
             this.statCountryChart.Name = "statCountryChart";
             this.statCountryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.statCountryChart.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.statCountryChart.Series.Add(series6);
             this.statCountryChart.Size = new System.Drawing.Size(264, 300);
             this.statCountryChart.TabIndex = 13;
             this.statCountryChart.Text = "chart1";
@@ -1016,10 +1534,10 @@
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.addPanel);
             this.Controls.Add(this.dashboardPanel);
             this.Controls.Add(this.statsPanel);
             this.Controls.Add(this.inventoryPanel);
+            this.Controls.Add(this.addPanel);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(898, 722);
             this.MinimumSize = new System.Drawing.Size(898, 722);
@@ -1030,6 +1548,12 @@
             this.panel1.ResumeLayout(false);
             this.dashboardPanel.ResumeLayout(false);
             this.dashboardPanel.PerformLayout();
+            this.pnlUserPIN.ResumeLayout(false);
+            this.pnlUserPIN.PerformLayout();
+            this.pnlUserEdit.ResumeLayout(false);
+            this.pnlUserEdit.PerformLayout();
+            this.pnlUserMain.ResumeLayout(false);
+            this.pnlUserMain.PerformLayout();
             this.addPanel.ResumeLayout(false);
             this.addPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1057,8 +1581,6 @@
         private System.Windows.Forms.Panel dashboardPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel addPanel;
         private System.Windows.Forms.TextBox addCost;
         private System.Windows.Forms.Label label17;
@@ -1121,6 +1643,46 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel pnlUserMain;
+        private System.Windows.Forms.Button btnEditUser;
+        private System.Windows.Forms.Label pin;
+        private System.Windows.Forms.Label dashUserLbl;
+        private System.Windows.Forms.Label dashNameLbl;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel pnlUserPIN;
+        private System.Windows.Forms.Button btnSubmitUser;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Panel pnlUserEdit;
+        private System.Windows.Forms.Button btnCancelUser;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Button btnSaveUser;
+        private System.Windows.Forms.TextBox pin4;
+        private System.Windows.Forms.TextBox pin3;
+        private System.Windows.Forms.TextBox pin2;
+        private System.Windows.Forms.TextBox pin1;
+        private System.Windows.Forms.TextBox firstName;
+        private System.Windows.Forms.TextBox lastName;
+        private System.Windows.Forms.TextBox username;
+        private System.Windows.Forms.TextBox confirm4;
+        private System.Windows.Forms.TextBox confirm3;
+        private System.Windows.Forms.TextBox confirm2;
+        private System.Windows.Forms.TextBox confirm1;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox newPIN4;
+        private System.Windows.Forms.TextBox newPIN3;
+        private System.Windows.Forms.TextBox newPIN2;
+        private System.Windows.Forms.TextBox newPIN1;
     }
 }
 
