@@ -27,7 +27,7 @@ namespace Cellar.Models
         private string location;
         private int typeCode;
         private int importanceCode;
-        private string[,] ratings;
+        private List<string[]> ratings;
         private string notes;
         private string serializedLabelImage;
 
@@ -45,13 +45,31 @@ namespace Cellar.Models
         public string Location { get => location; set => location = value; }
         public int TypeCode { get => typeCode; set => typeCode = value; }
         public int ImportanceCode { get => importanceCode; set => importanceCode = value; }
-        public string[,] Ratings { get => ratings; set => ratings = value; }
+        public List<string[]> Ratings { get => ratings; set => ratings = value; }
         public string Notes { get => notes; set => notes = value; }
         public string SerializedLabelImage { get => serializedLabelImage; set => serializedLabelImage = value; }
 
-        public Bottle()
+        public Bottle(string name, string prod, int vint, string originCountry, string originSub, string style,
+            string bottleSize, int drinkS, int drinkE, int peak, decimal bottleCost, string loc, int type,
+            int importance, List<string[]> criticRatings, string memo, string photoSerialized)
         {
-
+            bottleName = name;
+            producer = prod;
+            vintage = vint;
+            country = originCountry;
+            subregion = originSub;
+            styleOrVarietal = style;
+            size = bottleSize;
+            drinkByStart = drinkS;
+            drinkByEnd = drinkE;
+            drinkByPeak = peak;
+            cost = bottleCost;
+            location = loc;
+            typeCode = type;
+            importanceCode = importance;
+            ratings = criticRatings;
+            notes = memo;
+            serializedLabelImage = photoSerialized;
         }
 
         public override string ToString()

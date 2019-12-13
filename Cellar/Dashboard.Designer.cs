@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.addLocation = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.addRatingList = new System.Windows.Forms.TextBox();
+            this.addRatingList = new System.Windows.Forms.ListBox();
             this.btnAddRating = new System.Windows.Forms.Button();
             this.addRatingCritic = new System.Windows.Forms.TextBox();
             this.addRatingPts = new System.Windows.Forms.TextBox();
@@ -354,12 +354,11 @@
             // addRatingList
             // 
             this.addRatingList.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addRatingList.ItemHeight = 18;
             this.addRatingList.Location = new System.Drawing.Point(145, 316);
             this.addRatingList.MaximumSize = new System.Drawing.Size(218, 62);
-            this.addRatingList.Multiline = true;
             this.addRatingList.Name = "addRatingList";
-            this.addRatingList.ReadOnly = true;
-            this.addRatingList.Size = new System.Drawing.Size(218, 62);
+            this.addRatingList.Size = new System.Drawing.Size(218, 58);
             this.addRatingList.TabIndex = 37;
             this.addRatingList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddRatingList_KeyDown);
             // 
@@ -386,6 +385,7 @@
             this.addRatingCritic.Size = new System.Drawing.Size(115, 25);
             this.addRatingCritic.TabIndex = 35;
             this.addRatingCritic.Text = "critic";
+            this.addRatingCritic.TextChanged += new System.EventHandler(this.AddRatingCritic_TextChanged);
             // 
             // addRatingPts
             // 
@@ -396,6 +396,7 @@
             this.addRatingPts.Size = new System.Drawing.Size(44, 25);
             this.addRatingPts.TabIndex = 34;
             this.addRatingPts.Text = "pts";
+            this.addRatingPts.TextChanged += new System.EventHandler(this.AddRatingPts_TextChanged);
             // 
             // label2
             // 
@@ -488,6 +489,7 @@
             this.addDrinkByPeak.Size = new System.Drawing.Size(44, 25);
             this.addDrinkByPeak.TabIndex = 26;
             this.addDrinkByPeak.Text = "year";
+            this.addDrinkByPeak.TextChanged += new System.EventHandler(this.AddDrinkByPeak_TextChanged);
             // 
             // label12
             // 
@@ -518,6 +520,7 @@
             this.addDrinkByEnd.Size = new System.Drawing.Size(44, 25);
             this.addDrinkByEnd.TabIndex = 23;
             this.addDrinkByEnd.Text = "year";
+            this.addDrinkByEnd.TextChanged += new System.EventHandler(this.AddDrinkByEnd_TextChanged);
             // 
             // addDrinkByStart
             // 
@@ -528,6 +531,7 @@
             this.addDrinkByStart.Size = new System.Drawing.Size(44, 25);
             this.addDrinkByStart.TabIndex = 22;
             this.addDrinkByStart.Text = "year";
+            this.addDrinkByStart.TextChanged += new System.EventHandler(this.AddDrinkByStart_TextChanged);
             // 
             // label10
             // 
@@ -664,6 +668,7 @@
             this.addVintage.Size = new System.Drawing.Size(110, 25);
             this.addVintage.TabIndex = 10;
             this.addVintage.Text = "year";
+            this.addVintage.TextChanged += new System.EventHandler(this.AddVintage_TextChanged);
             // 
             // label5
             // 
@@ -932,11 +937,11 @@
             // statCategoryChart
             // 
             this.statCategoryChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.statCategoryChart.ChartAreas.Add(chartArea5);
-            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend5.Name = "Legend1";
-            this.statCategoryChart.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.statCategoryChart.ChartAreas.Add(chartArea1);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Name = "Legend1";
+            this.statCategoryChart.Legends.Add(legend1);
             this.statCategoryChart.Location = new System.Drawing.Point(308, 237);
             this.statCategoryChart.Name = "statCategoryChart";
             this.statCategoryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -949,11 +954,11 @@
         System.Drawing.Color.Green,
         System.Drawing.Color.Purple,
         System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))))};
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.statCategoryChart.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.statCategoryChart.Series.Add(series1);
             this.statCategoryChart.Size = new System.Drawing.Size(264, 300);
             this.statCategoryChart.TabIndex = 14;
             this.statCategoryChart.Text = "chart2";
@@ -961,19 +966,19 @@
             // statCountryChart
             // 
             this.statCountryChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.statCountryChart.ChartAreas.Add(chartArea6);
-            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend6.Name = "Legend1";
-            this.statCountryChart.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.statCountryChart.ChartAreas.Add(chartArea2);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            this.statCountryChart.Legends.Add(legend2);
             this.statCountryChart.Location = new System.Drawing.Point(15, 237);
             this.statCountryChart.Name = "statCountryChart";
             this.statCountryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.statCountryChart.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.statCountryChart.Series.Add(series2);
             this.statCountryChart.Size = new System.Drawing.Size(264, 300);
             this.statCountryChart.TabIndex = 13;
             this.statCountryChart.Text = "chart1";
@@ -1011,10 +1016,10 @@
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.statsPanel);
-            this.Controls.Add(this.inventoryPanel);
             this.Controls.Add(this.addPanel);
             this.Controls.Add(this.dashboardPanel);
+            this.Controls.Add(this.statsPanel);
+            this.Controls.Add(this.inventoryPanel);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(898, 722);
             this.MinimumSize = new System.Drawing.Size(898, 722);
@@ -1059,7 +1064,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox addLocation;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox addRatingList;
+        private System.Windows.Forms.ListBox addRatingList;
         private System.Windows.Forms.Button btnAddRating;
         private System.Windows.Forms.TextBox addRatingCritic;
         private System.Windows.Forms.TextBox addRatingPts;
