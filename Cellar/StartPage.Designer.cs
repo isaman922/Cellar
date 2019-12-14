@@ -31,6 +31,17 @@
             this.title = new System.Windows.Forms.Label();
             this.subtitle = new System.Windows.Forms.Label();
             this.signUpPanel = new System.Windows.Forms.Panel();
+            this.signInPanel = new System.Windows.Forms.Panel();
+            this.showSignUp = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.pin4 = new System.Windows.Forms.TextBox();
+            this.pin3 = new System.Windows.Forms.TextBox();
+            this.pin2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pin1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.TextBox();
             this.showSignIn = new System.Windows.Forms.Label();
             this.signUpPIN4B = new System.Windows.Forms.TextBox();
             this.signUpPIN3B = new System.Windows.Forms.TextBox();
@@ -52,17 +63,6 @@
             this.signUpPIN1A = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.signUpUserA = new System.Windows.Forms.TextBox();
-            this.signInPanel = new System.Windows.Forms.Panel();
-            this.showSignUp = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.pin4 = new System.Windows.Forms.TextBox();
-            this.pin3 = new System.Windows.Forms.TextBox();
-            this.pin2 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pin1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.username = new System.Windows.Forms.TextBox();
             this.signUpPanel.SuspendLayout();
             this.signInPanel.SuspendLayout();
             this.SuspendLayout();
@@ -83,12 +83,12 @@
             this.subtitle.AutoSize = true;
             this.subtitle.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitle.ForeColor = System.Drawing.Color.Linen;
-            this.subtitle.Location = new System.Drawing.Point(141, 130);
+            this.subtitle.Location = new System.Drawing.Point(141, 120);
             this.subtitle.MinimumSize = new System.Drawing.Size(600, 18);
             this.subtitle.Name = "subtitle";
-            this.subtitle.Size = new System.Drawing.Size(600, 18);
+            this.subtitle.Size = new System.Drawing.Size(600, 36);
             this.subtitle.TabIndex = 2;
-            this.subtitle.Text = "Something Witty Here";
+            this.subtitle.Text = "“Beer is made by men, wine by God.” \r\n                        -Martin Luther";
             this.subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // signUpPanel
@@ -120,6 +120,137 @@
             this.signUpPanel.Name = "signUpPanel";
             this.signUpPanel.Size = new System.Drawing.Size(860, 479);
             this.signUpPanel.TabIndex = 17;
+            // 
+            // signInPanel
+            // 
+            this.signInPanel.BackColor = System.Drawing.Color.Linen;
+            this.signInPanel.Controls.Add(this.showSignUp);
+            this.signInPanel.Controls.Add(this.label13);
+            this.signInPanel.Controls.Add(this.btnLogin);
+            this.signInPanel.Controls.Add(this.pin4);
+            this.signInPanel.Controls.Add(this.pin3);
+            this.signInPanel.Controls.Add(this.pin2);
+            this.signInPanel.Controls.Add(this.label14);
+            this.signInPanel.Controls.Add(this.pin1);
+            this.signInPanel.Controls.Add(this.label15);
+            this.signInPanel.Controls.Add(this.username);
+            this.signInPanel.Location = new System.Drawing.Point(0, 0);
+            this.signInPanel.Name = "signInPanel";
+            this.signInPanel.Size = new System.Drawing.Size(860, 479);
+            this.signInPanel.TabIndex = 0;
+            // 
+            // showSignUp
+            // 
+            this.showSignUp.AutoSize = true;
+            this.showSignUp.BackColor = System.Drawing.Color.Linen;
+            this.showSignUp.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showSignUp.Location = new System.Drawing.Point(211, 445);
+            this.showSignUp.MinimumSize = new System.Drawing.Size(438, 24);
+            this.showSignUp.Name = "showSignUp";
+            this.showSignUp.Size = new System.Drawing.Size(438, 24);
+            this.showSignUp.TabIndex = 6;
+            this.showSignUp.Text = "Don\'t have an account? Click here to sign up.";
+            this.showSignUp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.showSignUp.Click += new System.EventHandler(this.ShowSignUp_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Linen;
+            this.label13.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(13, 12);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(293, 34);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Current User Sign-In";
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.Linen;
+            this.btnLogin.Location = new System.Drawing.Point(211, 354);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(438, 88);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            // 
+            // pin4
+            // 
+            this.pin4.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin4.Location = new System.Drawing.Point(444, 258);
+            this.pin4.MaxLength = 1;
+            this.pin4.Name = "pin4";
+            this.pin4.Size = new System.Drawing.Size(31, 30);
+            this.pin4.TabIndex = 4;
+            this.pin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin4.TextChanged += new System.EventHandler(this.Pin4_TextChanged);
+            // 
+            // pin3
+            // 
+            this.pin3.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin3.Location = new System.Drawing.Point(407, 258);
+            this.pin3.MaxLength = 1;
+            this.pin3.Name = "pin3";
+            this.pin3.Size = new System.Drawing.Size(31, 30);
+            this.pin3.TabIndex = 3;
+            this.pin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin3.TextChanged += new System.EventHandler(this.Pin3_TextChanged);
+            // 
+            // pin2
+            // 
+            this.pin2.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin2.Location = new System.Drawing.Point(370, 258);
+            this.pin2.MaxLength = 1;
+            this.pin2.Name = "pin2";
+            this.pin2.Size = new System.Drawing.Size(31, 30);
+            this.pin2.TabIndex = 2;
+            this.pin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin2.TextChanged += new System.EventHandler(this.Pin2_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Linen;
+            this.label14.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(328, 152);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(99, 24);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Username";
+            // 
+            // pin1
+            // 
+            this.pin1.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin1.Location = new System.Drawing.Point(333, 258);
+            this.pin1.MaxLength = 1;
+            this.pin1.Name = "pin1";
+            this.pin1.Size = new System.Drawing.Size(31, 30);
+            this.pin1.TabIndex = 1;
+            this.pin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pin1.TextChanged += new System.EventHandler(this.Pin1_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Linen;
+            this.label15.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(329, 231);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(48, 24);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "PIN";
+            // 
+            // username
+            // 
+            this.username.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.Location = new System.Drawing.Point(331, 179);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(202, 30);
+            this.username.TabIndex = 0;
             // 
             // showSignIn
             // 
@@ -345,137 +476,6 @@
             this.signUpUserA.Name = "signUpUserA";
             this.signUpUserA.Size = new System.Drawing.Size(202, 30);
             this.signUpUserA.TabIndex = 2;
-            // 
-            // signInPanel
-            // 
-            this.signInPanel.BackColor = System.Drawing.Color.Linen;
-            this.signInPanel.Controls.Add(this.showSignUp);
-            this.signInPanel.Controls.Add(this.label13);
-            this.signInPanel.Controls.Add(this.btnLogin);
-            this.signInPanel.Controls.Add(this.pin4);
-            this.signInPanel.Controls.Add(this.pin3);
-            this.signInPanel.Controls.Add(this.pin2);
-            this.signInPanel.Controls.Add(this.label14);
-            this.signInPanel.Controls.Add(this.pin1);
-            this.signInPanel.Controls.Add(this.label15);
-            this.signInPanel.Controls.Add(this.username);
-            this.signInPanel.Location = new System.Drawing.Point(0, 0);
-            this.signInPanel.Name = "signInPanel";
-            this.signInPanel.Size = new System.Drawing.Size(860, 479);
-            this.signInPanel.TabIndex = 0;
-            // 
-            // showSignUp
-            // 
-            this.showSignUp.AutoSize = true;
-            this.showSignUp.BackColor = System.Drawing.Color.Linen;
-            this.showSignUp.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showSignUp.Location = new System.Drawing.Point(211, 445);
-            this.showSignUp.MinimumSize = new System.Drawing.Size(438, 24);
-            this.showSignUp.Name = "showSignUp";
-            this.showSignUp.Size = new System.Drawing.Size(438, 24);
-            this.showSignUp.TabIndex = 6;
-            this.showSignUp.Text = "Don\'t have an account? Click here to sign up.";
-            this.showSignUp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.showSignUp.Click += new System.EventHandler(this.ShowSignUp_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Linen;
-            this.label13.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 12);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(293, 34);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Current User Sign-In";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Linen;
-            this.btnLogin.Location = new System.Drawing.Point(211, 354);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(438, 88);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
-            // 
-            // pin4
-            // 
-            this.pin4.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pin4.Location = new System.Drawing.Point(444, 258);
-            this.pin4.MaxLength = 1;
-            this.pin4.Name = "pin4";
-            this.pin4.Size = new System.Drawing.Size(31, 30);
-            this.pin4.TabIndex = 4;
-            this.pin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pin4.TextChanged += new System.EventHandler(this.Pin4_TextChanged);
-            // 
-            // pin3
-            // 
-            this.pin3.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pin3.Location = new System.Drawing.Point(407, 258);
-            this.pin3.MaxLength = 1;
-            this.pin3.Name = "pin3";
-            this.pin3.Size = new System.Drawing.Size(31, 30);
-            this.pin3.TabIndex = 3;
-            this.pin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pin3.TextChanged += new System.EventHandler(this.Pin3_TextChanged);
-            // 
-            // pin2
-            // 
-            this.pin2.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pin2.Location = new System.Drawing.Point(370, 258);
-            this.pin2.MaxLength = 1;
-            this.pin2.Name = "pin2";
-            this.pin2.Size = new System.Drawing.Size(31, 30);
-            this.pin2.TabIndex = 2;
-            this.pin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pin2.TextChanged += new System.EventHandler(this.Pin2_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Linen;
-            this.label14.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(328, 152);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 24);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Username";
-            // 
-            // pin1
-            // 
-            this.pin1.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pin1.Location = new System.Drawing.Point(333, 258);
-            this.pin1.MaxLength = 1;
-            this.pin1.Name = "pin1";
-            this.pin1.Size = new System.Drawing.Size(31, 30);
-            this.pin1.TabIndex = 1;
-            this.pin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pin1.TextChanged += new System.EventHandler(this.Pin1_TextChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Linen;
-            this.label15.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(329, 231);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 24);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "PIN";
-            // 
-            // username
-            // 
-            this.username.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(331, 179);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(202, 30);
-            this.username.TabIndex = 0;
             // 
             // StartPage
             // 
