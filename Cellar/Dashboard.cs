@@ -175,35 +175,29 @@ namespace Cellar
             statAvgAge.Text = $"{bottles.AvgBottleAge():F2} yrs";
             statAvgPeak.Text = $"{bottles.AvgPeakYear()}";
 
-            //TO DO
-            //SetCountryChart();
+            SetCountryChart();
             SetCategoryChart();
-            //statCategoryChart.Update();
         }
 
         private void SetCountryChart()
         {
-            //statCountryChart.DataSource = bottles.CountryBreakdown();
-            //statCountryChart.Series["Origin"].XValueMember = "Origin";
-            //statCountryChart.Series["Origin"].YValueMembers = "Count";
-            //statCountryChart.Titles.Add("Country Breakdown");
-            //statCountryChart.Series["Origin"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            //statCountryChart.Series["Origin"].IsValueShownAsLabel = true;
+            //TO DO
         }
 
         private void SetCategoryChart()
         {
-            int[] categoryDetails = bottles.CategoryBreakdown();
+            //TO DO
 
-            //Add some datapoints so the series. in this case you can pass the values to this method
-            //statCategoryChart.Series["series1"].Points.AddXY("Red Wine", 1);
-            //statCategoryChart.Series["series1"].Points.AddXY("Rose Wine", 2);
-            //statCategoryChart.Series["series1"].Points.AddXY("White Wine", 3);
-            //statCategoryChart.Series["series1"].Points.AddXY("Sparkling Wine", 4);
-            //statCategoryChart.Series["series1"].Points.AddXY("Dessert/Fortified Wine", 3);
-            //statCategoryChart.Series["series1"].Points.AddXY("Beer", 2);
-            //statCategoryChart.Series["series1"].Points.AddXY("Spirit", 1);
-            //statCategoryChart.Series["series1"].Points.AddXY("Other", 2);
+            //this.statCategoryChart.PaletteCustomColors = new System.Drawing.Color[] {
+            //System.Drawing.Color.DarkRed,
+            //System.Drawing.Color.Pink,
+            //System.Drawing.Color.LightYellow,
+            //System.Drawing.Color.DodgerBlue,
+            //System.Drawing.Color.SaddleBrown,
+            //System.Drawing.Color.Green,
+            //System.Drawing.Color.Purple,
+            //System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))))};
+            //}
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)

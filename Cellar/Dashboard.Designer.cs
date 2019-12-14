@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -142,8 +136,6 @@
             this.statAvgPeak = new System.Windows.Forms.Label();
             this.statAvgAge = new System.Windows.Forms.Label();
             this.statAvgCost = new System.Windows.Forms.Label();
-            this.statCategoryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.statCountryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -157,8 +149,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.addLabelPicture)).BeginInit();
             this.inventoryPanel.SuspendLayout();
             this.statsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statCategoryChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statCountryChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1344,8 +1334,6 @@
             this.statsPanel.Controls.Add(this.statAvgPeak);
             this.statsPanel.Controls.Add(this.statAvgAge);
             this.statsPanel.Controls.Add(this.statAvgCost);
-            this.statsPanel.Controls.Add(this.statCategoryChart);
-            this.statsPanel.Controls.Add(this.statCountryChart);
             this.statsPanel.Controls.Add(this.label32);
             this.statsPanel.Controls.Add(this.label33);
             this.statsPanel.Location = new System.Drawing.Point(280, 122);
@@ -1453,55 +1441,6 @@
             this.statAvgCost.TabIndex = 15;
             this.statAvgCost.Text = "$87.95";
             // 
-            // statCategoryChart
-            // 
-            this.statCategoryChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.statCategoryChart.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Name = "Legend1";
-            this.statCategoryChart.Legends.Add(legend1);
-            this.statCategoryChart.Location = new System.Drawing.Point(308, 237);
-            this.statCategoryChart.Name = "statCategoryChart";
-            this.statCategoryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            this.statCategoryChart.PaletteCustomColors = new System.Drawing.Color[] {
-        System.Drawing.Color.DarkRed,
-        System.Drawing.Color.Pink,
-        System.Drawing.Color.LightYellow,
-        System.Drawing.Color.DodgerBlue,
-        System.Drawing.Color.SaddleBrown,
-        System.Drawing.Color.Green,
-        System.Drawing.Color.Purple,
-        System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))))};
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.statCategoryChart.Series.Add(series1);
-            this.statCategoryChart.Size = new System.Drawing.Size(264, 300);
-            this.statCategoryChart.TabIndex = 14;
-            this.statCategoryChart.Text = "chart2";
-            // 
-            // statCountryChart
-            // 
-            this.statCountryChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.statCountryChart.ChartAreas.Add(chartArea2);
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.statCountryChart.Legends.Add(legend2);
-            this.statCountryChart.Location = new System.Drawing.Point(15, 237);
-            this.statCountryChart.Name = "statCountryChart";
-            this.statCountryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.statCountryChart.Series.Add(series2);
-            this.statCountryChart.Size = new System.Drawing.Size(264, 300);
-            this.statCountryChart.TabIndex = 13;
-            this.statCountryChart.Text = "chart1";
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1563,8 +1502,6 @@
             this.inventoryPanel.PerformLayout();
             this.statsPanel.ResumeLayout(false);
             this.statsPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statCategoryChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statCountryChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1639,8 +1576,6 @@
         private System.Windows.Forms.Label statAvgPeak;
         private System.Windows.Forms.Label statAvgAge;
         private System.Windows.Forms.Label statAvgCost;
-        private System.Windows.Forms.DataVisualization.Charting.Chart statCategoryChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart statCountryChart;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
