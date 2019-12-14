@@ -188,16 +188,15 @@ namespace Cellar
         {
             //TO DO
 
-            //this.statCategoryChart.PaletteCustomColors = new System.Drawing.Color[] {
-            //System.Drawing.Color.DarkRed,
-            //System.Drawing.Color.Pink,
-            //System.Drawing.Color.LightYellow,
-            //System.Drawing.Color.DodgerBlue,
-            //System.Drawing.Color.SaddleBrown,
-            //System.Drawing.Color.Green,
-            //System.Drawing.Color.Purple,
-            //System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))))};
-            //}
+            this.statCategoryChart.PaletteCustomColors = new System.Drawing.Color[] {
+            System.Drawing.Color.DarkRed,
+            System.Drawing.Color.Pink,
+            System.Drawing.Color.LightYellow,
+            System.Drawing.Color.DodgerBlue,
+            System.Drawing.Color.SaddleBrown,
+            System.Drawing.Color.Green,
+            System.Drawing.Color.Purple,
+            System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))))};
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)

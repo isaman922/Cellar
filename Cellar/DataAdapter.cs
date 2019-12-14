@@ -27,6 +27,7 @@ namespace Cellar
                 try
                 {
                     records.Add(line);
+                    line = sr.ReadLine();
                 }
                 catch (Exception e)
                 {
