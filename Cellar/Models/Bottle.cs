@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cellar.Models
 {
+    [Serializable]
     public class Bottle
     {
         /// <summary>

@@ -15,7 +15,6 @@ namespace Cellar
     {
         //General Variables
         Models.Collection bottles;
-        string[,] ratingsList;
 
         public Dashboard(Models.Collection collection)
         {
@@ -33,6 +32,8 @@ namespace Cellar
                             where bottle.DrinkByStart <= DateTime.Today.Year
                             orderby bottle.DrinkByStart descending , bottle.BottleName ascending
                             select bottle;
+
+            listToOpen.Items.Clear();
             foreach (Models.Bottle b in openQuery)
             {
                 listToOpen.Items.Add(b.ToOpenString());
@@ -138,7 +139,7 @@ namespace Cellar
                 * invFilterBy- ComboBox allowing for list sorting
                 * invList- List of bottles in the collection
             */
-
+            invList.Items.Clear();
             foreach (Models.Bottle b in bottles.Bottles)
             {
                 invList.Items.Add(b.ToString());
@@ -171,7 +172,7 @@ namespace Cellar
             statBottleTotal.Text = $"{bottles.BottleCount()}";
             statValueTotal.Text = $"{bottles.TotalValue():C}";
             statAvgCost.Text = $"{bottles.AvgBottleCost():C}";
-            statAvgAge.Text = $"{bottles.AvgBottleAge():D2} yrs";
+            statAvgAge.Text = $"{bottles.AvgBottleAge():F2} yrs";
             statAvgPeak.Text = $"{bottles.AvgPeakYear()}";
 
             //TO DO
