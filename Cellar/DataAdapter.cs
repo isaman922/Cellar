@@ -10,7 +10,7 @@ namespace Cellar
 {
     public static class DataAdapter
     {
-        static string textPath = Path.GetDirectoryName(Application.ExecutablePath).ToString() + @"\..\..\Resources\StoredData.txt";
+        static string textPath = Path.GetDirectoryName(Application.ExecutablePath).ToString() + @"\..\..\StoredData.txt";
 
         public static List<string> GetRecords()
         {

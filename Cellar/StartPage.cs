@@ -94,10 +94,11 @@ namespace Cellar
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 //Shoe Messagebox Error about PIN
-                MessageBox.Show("PIN must include only numbers", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message, "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //MessageBox.Show("PIN must include only numbers", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

@@ -31,6 +31,7 @@ namespace Cellar.Models
             lastName = lName;
             userName = user;
             pinNumber = pin;
+            Bottles = new List<Bottle>();
         }
 
         public Collection(string fName, string lName, string user, int pin, List<Bottle> list)
@@ -69,8 +70,15 @@ namespace Cellar.Models
         public decimal AvgBottleCost()
         {
             //Retrieve and return average cost of a bottle in the collection
-            decimal cost = TotalValue() / BottleCount();
-            return cost;
+            if (BottleCount() != 0)
+            {
+                decimal cost = TotalValue() / BottleCount();
+                return cost;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public double AvgBottleAge()
@@ -83,9 +91,15 @@ namespace Cellar.Models
                 totalAge += (DateTime.Today.Year - b.Vintage);
             }
 
-            double age = totalAge / BottleCount();
-
-            return age;
+            if (BottleCount() != 0)
+            {
+                double age = totalAge / BottleCount();
+                return age;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public int AvgPeakYear()
@@ -98,9 +112,15 @@ namespace Cellar.Models
                 totalYear += b.DrinkByPeak;
             }
 
-            int year = totalYear / BottleCount();
-
-            return year;
+            if (BottleCount() != 0)
+            {
+                int year = totalYear / BottleCount();
+                return year;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public List<string[]> CountryBreakdown()
