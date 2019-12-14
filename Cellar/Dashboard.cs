@@ -176,8 +176,34 @@ namespace Cellar
             statAvgPeak.Text = $"{bottles.AvgPeakYear()}";
 
             //TO DO
-            //Update Charts
+            //SetCountryChart();
+            SetCategoryChart();
+            //statCategoryChart.Update();
+        }
 
+        private void SetCountryChart()
+        {
+            //statCountryChart.DataSource = bottles.CountryBreakdown();
+            //statCountryChart.Series["Origin"].XValueMember = "Origin";
+            //statCountryChart.Series["Origin"].YValueMembers = "Count";
+            //statCountryChart.Titles.Add("Country Breakdown");
+            //statCountryChart.Series["Origin"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            //statCountryChart.Series["Origin"].IsValueShownAsLabel = true;
+        }
+
+        private void SetCategoryChart()
+        {
+            int[] categoryDetails = bottles.CategoryBreakdown();
+
+            //Add some datapoints so the series. in this case you can pass the values to this method
+            //statCategoryChart.Series["series1"].Points.AddXY("Red Wine", 1);
+            //statCategoryChart.Series["series1"].Points.AddXY("Rose Wine", 2);
+            //statCategoryChart.Series["series1"].Points.AddXY("White Wine", 3);
+            //statCategoryChart.Series["series1"].Points.AddXY("Sparkling Wine", 4);
+            //statCategoryChart.Series["series1"].Points.AddXY("Dessert/Fortified Wine", 3);
+            //statCategoryChart.Series["series1"].Points.AddXY("Beer", 2);
+            //statCategoryChart.Series["series1"].Points.AddXY("Spirit", 1);
+            //statCategoryChart.Series["series1"].Points.AddXY("Other", 2);
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
