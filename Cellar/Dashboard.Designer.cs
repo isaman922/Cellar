@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -132,6 +132,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.invList = new System.Windows.Forms.ListBox();
             this.statsPanel = new System.Windows.Forms.Panel();
+            this.statCategoryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.statCountryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -145,8 +147,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.statCountryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.statCategoryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.dashboardPanel.SuspendLayout();
             this.pnlUserMain.SuspendLayout();
@@ -157,8 +157,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.addLabelPicture)).BeginInit();
             this.inventoryPanel.SuspendLayout();
             this.statsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statCountryChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statCategoryChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statCountryChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1353,6 +1353,42 @@
             this.statsPanel.Size = new System.Drawing.Size(590, 549);
             this.statsPanel.TabIndex = 6;
             // 
+            // statCategoryChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.statCategoryChart.ChartAreas.Add(chartArea1);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Name = "Legend1";
+            this.statCategoryChart.Legends.Add(legend1);
+            this.statCategoryChart.Location = new System.Drawing.Point(301, 255);
+            this.statCategoryChart.Name = "statCategoryChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Category";
+            this.statCategoryChart.Series.Add(series1);
+            this.statCategoryChart.Size = new System.Drawing.Size(250, 250);
+            this.statCategoryChart.TabIndex = 21;
+            this.statCategoryChart.Text = "chart1";
+            // 
+            // statCountryChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.statCountryChart.ChartAreas.Add(chartArea2);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            this.statCountryChart.Legends.Add(legend2);
+            this.statCountryChart.Location = new System.Drawing.Point(8, 255);
+            this.statCountryChart.Name = "statCountryChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Country";
+            this.statCountryChart.Series.Add(series2);
+            this.statCountryChart.Size = new System.Drawing.Size(250, 250);
+            this.statCountryChart.TabIndex = 20;
+            this.statCountryChart.Text = "chart1";
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1477,40 +1513,6 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // statCountryChart
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.statCountryChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.statCountryChart.Legends.Add(legend2);
-            this.statCountryChart.Location = new System.Drawing.Point(8, 255);
-            this.statCountryChart.Name = "statCountryChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Country";
-            this.statCountryChart.Series.Add(series2);
-            this.statCountryChart.Size = new System.Drawing.Size(250, 250);
-            this.statCountryChart.TabIndex = 20;
-            this.statCountryChart.Text = "chart1";
-            // 
-            // statCategoryChart
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.statCategoryChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.statCategoryChart.Legends.Add(legend1);
-            this.statCategoryChart.Location = new System.Drawing.Point(301, 255);
-            this.statCategoryChart.Name = "statCategoryChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Category";
-            this.statCategoryChart.Series.Add(series1);
-            this.statCategoryChart.Size = new System.Drawing.Size(250, 250);
-            this.statCategoryChart.TabIndex = 21;
-            this.statCategoryChart.Text = "chart1";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1548,8 +1550,8 @@
             this.inventoryPanel.PerformLayout();
             this.statsPanel.ResumeLayout(false);
             this.statsPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statCountryChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statCategoryChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statCountryChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

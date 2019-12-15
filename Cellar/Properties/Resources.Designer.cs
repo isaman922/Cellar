@@ -61,11 +61,12 @@ namespace Cellar.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string StoredData {
+        internal static System.Drawing.Bitmap Wine_Bottle {
             get {
-                return ResourceManager.GetString("StoredData", resourceCulture);
+                object obj = ResourceManager.GetObject("Wine_Bottle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

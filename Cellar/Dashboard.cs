@@ -38,6 +38,11 @@ namespace Cellar
             {
                 listToOpen.Items.Add(b.ToOpenString());
             }
+
+            dashboardPanel.Visible = true;
+            addPanel.Visible = false;
+            inventoryPanel.Visible = false;
+            statsPanel.Visible = false;
         }
 
         private void BtnDashboard_Click(object sender, EventArgs e)
@@ -181,22 +186,89 @@ namespace Cellar
 
         private void SetCountryChart()
         {
-            //TO DO
+            //List<string[]> data = //bottles.CountryBreakdown();
+            List<string[]> data = new List<string[]>();
+            data.Add(new string[] { "USA", "3" });
+            data.Add(new string[] { "France", "7" });
+            data.Add(new string[] { "Germany", "1" });
+            data.Add(new string[] { "Spain", "2" });
+            data.Add(new string[] { "Italy", "2" });
+
+            statCountryChart.Series.Clear();
+
+            System.Windows.Forms.DataVisualization.Charting.Series countries = null;
+
+            foreach (System.Windows.Forms.DataVisualization.Charting.Series series in statCountryChart.Series)
+            {
+                if (series.Name == "Countries")
+                {
+                    countries = series;
+                }
+            }
+            if (countries == null)
+            {
+                countries = new System.Windows.Forms.DataVisualization.Charting.Series("Countries");
+                statCountryChart.Series.Add(countries);
+            }
+
+            countries.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            statCountryChart.Series[0]["PieLabelStyle"] = "Inside";
+            countries.IsValueShownAsLabel = true;
+
+            foreach (string[] item in data)
+            {
+                countries.Points.AddXY(item[0], Convert.ToInt32(item[1]));
+            }
         }
 
         private void SetCategoryChart()
         {
-            //TO DO
+            //int[] data = bottles.CategoryBreakdown();
+            int[] data = new int[] { 3, 6, 4, 7, 9, 12, 4, 6 };
+            statCategoryChart.Series.Clear();
 
-            this.statCategoryChart.PaletteCustomColors = new System.Drawing.Color[] {
-            System.Drawing.Color.DarkRed,
-            System.Drawing.Color.Pink,
-            System.Drawing.Color.LightYellow,
-            System.Drawing.Color.DodgerBlue,
-            System.Drawing.Color.SaddleBrown,
-            System.Drawing.Color.Green,
-            System.Drawing.Color.Purple,
-            System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))))};
+            System.Windows.Forms.DataVisualization.Charting.Series categories = null;
+
+            foreach (System.Windows.Forms.DataVisualization.Charting.Series series in statCategoryChart.Series)
+            {
+                if (series.Name == "Categories")
+                {
+                    categories = series;
+                }
+            }
+            if (categories == null)
+            {
+                categories = new System.Windows.Forms.DataVisualization.Charting.Series("Categories");
+                statCategoryChart.Series.Add(categories);
+            }
+
+            categories.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            statCategoryChart.Series[0]["PieLabelStyle"] = "Inside";
+            categories.IsValueShownAsLabel = true;
+
+            categories.Points.AddXY("Red Wine", data[0]);
+            categories.Points.AddXY("Rose Wine", data[1]);
+            categories.Points.AddXY("White Wine", data[2]);
+            categories.Points.AddXY("Sparkling Wine", data[3]);
+            categories.Points.AddXY("Dessert/Fortified Wine", data[4]);
+            categories.Points.AddXY("Beer", data[5]);
+            categories.Points.AddXY("Spirit", data[6]);
+            categories.Points.AddXY("Other", data[7]);
+            statCategoryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            statCategoryChart.PaletteCustomColors = new Color[] 
+            {Color.DarkRed, Color.Pink, Color.LightYellow, Color.DodgerBlue, Color.SaddleBrown, Color.Green, Color.Purple, Color.FromArgb(64,64,64)};
+
+            //hide label value if zero
+            foreach (System.Windows.Forms.DataVisualization.Charting.DataPoint point in categories.Points)
+            {
+                if (point.YValues.Length > 0 && (double)point.YValues.GetValue(0) == 0)
+                {
+                    point.IsValueShownAsLabel = false;
+                    string temp = point.AxisLabel;
+                    point.AxisLabel = "";
+                    point.LegendText = temp;
+                }
+            }
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -205,7 +277,7 @@ namespace Cellar
             List<Models.Collection> records = Serializer.GetCollections();
 
             //Delete the collection where username = bottles.Username
-            foreach (Models.Collection record in records)
+            foreach (Models.Collection record in records.ToList())
             {
                 if (record.UserName == bottles.UserName)
                 {
@@ -313,7 +385,8 @@ namespace Cellar
         {
             //Run the openFileDialog and retrieve label picture to input as the pic
 
-            openFileDialog.Filter = "Image Files | *.gif, *.jpg, *.jpeg, *.bmp, *.png";
+            openFileDialog.Filter = "Image Files|*.gif;*.jpg;*.jpeg;*.bmp;*.png";
+            openFileDialog.FileName = "";
             DialogResult clicked = openFileDialog.ShowDialog();
 
             if (clicked == DialogResult.Cancel)
@@ -347,7 +420,7 @@ namespace Cellar
                 addDrinkByPeak.Text = addCost.Text = addLocation.Text = addType.Text =
                 addImportance.Text = addRatingPts.Text = addRatingCritic.Text = addNotes.Text =
                 addRatingList.Text = addNotes.Text = default;
-            addLabelPicture.Image = default;
+            addLabelPicture.Image = Properties.Resources.Wine_Bottle;
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
