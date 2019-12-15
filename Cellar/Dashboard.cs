@@ -397,7 +397,7 @@ namespace Cellar
             {
                 try
                 {
-                    //Upload the picture
+                    //Upload the label picture
                     addLabelPicture.ImageLocation = openFileDialog.FileName;
                 }
                 catch
