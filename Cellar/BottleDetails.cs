@@ -96,7 +96,13 @@ namespace Cellar
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            
+            DialogResult choice = MessageBox.Show("Edit this bottle?",
+                "Edit Bottle", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (choice == DialogResult.OK)
+            {
+                theSender.EditBottle(theBottle);
+                Hide();
+            }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)

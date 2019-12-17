@@ -16,6 +16,8 @@ namespace Cellar
     {
         //General Variables
         Models.Collection bottles;
+        private bool isEditing = false;
+        private Models.Bottle bottleBeingEdited;
 
         public Collection Bottles { get => bottles; set => bottles = value; }
 
@@ -452,23 +454,7 @@ namespace Cellar
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            //Convert the contents of the ratings listBox to a list of string arrays
-            List<string[]> ratingsList = new List<string[]>();
-            for (int i = 0; i < addRatingList.Items.Count; i++)
-            {
-                ratingsList.Add(addRatingList.Items[i] as string[]);
-            }
-
-            //Add the bottle to the collection
-            Models.Bottle newBottle = new Models.Bottle(addName.Text, addProducer.Text, Convert.ToInt32(addVintage.Text),
-                addCountry.Text, addRegion.Text, addStyle.Text, addSize.Text, Convert.ToInt32(addDrinkByStart.Text),
-                Convert.ToInt32(addDrinkByEnd.Text), Convert.ToInt32(addDrinkByPeak.Text), Convert.ToDecimal(addCost.Text),
-                addLocation.Text, addType.SelectedIndex, addImportance.SelectedIndex, ratingsList, addNotes.Text,
-                Serializer.SerializePhoto(addLabelPicture.Image));
-            Bottles.Bottles.Add(newBottle);
-
-            MessageBox.Show("The bottle has been added to the collection!", "Bottle Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            AddBottleReset();
+            AddBottle();
         }
 
         private void AddVintage_TextChanged(object sender, EventArgs e)
@@ -545,14 +531,14 @@ namespace Cellar
                 }
                 else
                 {
-                    MessageBox.Show("The PIN number you have entered is inccorect.", "Incorrect PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The PIN number you have entered is incorrect.", "Incorrect PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     pnlUserMain.Visible = true;
                     pnlUserPIN.Visible = false;
                 }
             }
             catch
             {
-                MessageBox.Show("The PIN number you have entered is inccorect.", "Incorrect PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The PIN number you have entered is incorrect.", "Incorrect PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 pnlUserMain.Visible = true;
                 pnlUserPIN.Visible = false;
             }
@@ -639,6 +625,88 @@ namespace Cellar
         private void Pin4_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin4);
+        }
+
+        private void CheckEdit()
+        {
+            if(isEditing)
+            {
+                DialogResult choice = MessageBox.Show("You are currently editing a bottle. Would you like to save the changes made to the bottle?", "Continue Editing?", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(choice == DialogResult.Yes)
+                {
+                    int numBottles = bottles.Bottles.Count;
+                    AddBottle();
+                    if (bottles.Bottles.Count != numBottles)
+                    {
+                        bottles.Bottles.Remove(bottleBeingEdited);
+                        isEditing = false;
+                    }
+                }
+                else
+                {
+                    isEditing = false;
+                }
+            }
+        }
+
+        private void AddBottle()
+        {
+            //Convert the contents of the ratings listBox to a list of string arrays
+            List<string[]> ratingsList = new List<string[]>();
+            for (int i = 0; i < addRatingList.Items.Count; i++)
+            {
+                ratingsList.Add(addRatingList.Items[i] as string[]);
+            }
+
+            //Add the bottle to the collection
+            Models.Bottle newBottle = new Models.Bottle(addName.Text, addProducer.Text, Convert.ToInt32(addVintage.Text),
+                addCountry.Text, addRegion.Text, addStyle.Text, addSize.Text, Convert.ToInt32(addDrinkByStart.Text),
+                Convert.ToInt32(addDrinkByEnd.Text), Convert.ToInt32(addDrinkByPeak.Text), Convert.ToDecimal(addCost.Text),
+                addLocation.Text, addType.SelectedIndex, addImportance.SelectedIndex, ratingsList, addNotes.Text,
+                Serializer.SerializePhoto(addLabelPicture.Image));
+            Bottles.Bottles.Add(newBottle);
+
+            MessageBox.Show("The bottle has been added to the collection!", "Bottle Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AddBottleReset();
+        }
+
+        public void EditBottle(Models.Bottle theBottle)
+        {
+            isEditing = true;
+            bottleBeingEdited = theBottle;
+
+            btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
+            btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            btnStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+
+            dashboardPanel.Visible = false;
+            addPanel.Visible = true;
+            inventoryPanel.Visible = false;
+            statsPanel.Visible = false;
+
+            foreach (string[] item in theBottle.Ratings)
+            {
+                addRatingList.Items.Add(item);
+            }
+
+            addName.Text = theBottle.BottleName;
+            addProducer.Text = theBottle.Producer;
+            addVintage.Text = theBottle.Vintage.ToString();
+            addCountry.Text = theBottle.Country;
+            addRegion.Text = theBottle.Subregion;
+            addStyle.Text = theBottle.StyleOrVarietal;
+            addSize.Text = theBottle.Size;
+            addDrinkByStart.Text = theBottle.DrinkByStart.ToString();
+            addDrinkByEnd.Text = theBottle.DrinkByEnd.ToString();
+            addDrinkByPeak.Text = theBottle.DrinkByPeak.ToString();
+            addCost.Text = theBottle.Cost.ToString();
+            addLocation.Text = theBottle.Location;
+            addType.SelectedIndex = theBottle.TypeCode;
+            addImportance.SelectedIndex = theBottle.ImportanceCode;
+            addNotes.Text = theBottle.Notes;
+            addLabelPicture.Image = Serializer.DeserializePhoto(theBottle.SerializedLabelImage);
         }
     }
 }
