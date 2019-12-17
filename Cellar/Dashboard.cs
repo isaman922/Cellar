@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Cellar.Models;
 
 namespace Cellar
 {
@@ -16,19 +17,21 @@ namespace Cellar
         //General Variables
         Models.Collection bottles;
 
+        public Collection Bottles { get => bottles; set => bottles = value; }
+
         public Dashboard(Models.Collection collection)
         {
             InitializeComponent();
 
-            bottles = collection;
+            Bottles = collection;
             subtitle.Text = $"{collection.FirstName} {collection.LastName}'s Cellar";
 
-            dashUserLbl.Text = bottles.UserName;
-            dashNameLbl.Text = $"{bottles.FirstName} {bottles.LastName}";
-            dashCellarCount.Text = bottles.BottleCount().ToString();
-            dashCellarValue.Text = $"{bottles.TotalValue().ToString():C}";
+            dashUserLbl.Text = Bottles.UserName;
+            dashNameLbl.Text = $"{Bottles.FirstName} {Bottles.LastName}";
+            dashCellarCount.Text = Bottles.BottleCount().ToString();
+            dashCellarValue.Text = $"{Bottles.TotalValue().ToString():C}";
 
-            var openQuery = from bottle in bottles.Bottles
+            var openQuery = from bottle in Bottles.Bottles
                             where bottle.DrinkByStart <= DateTime.Today.Year
                             orderby bottle.DrinkByStart descending , bottle.BottleName ascending
                             select bottle;
@@ -58,12 +61,12 @@ namespace Cellar
             inventoryPanel.Visible = false;
             statsPanel.Visible = false;
 
-            dashUserLbl.Text = bottles.UserName;
-            dashNameLbl.Text = $"{bottles.FirstName} {bottles.LastName}";
-            dashCellarCount.Text = bottles.BottleCount().ToString();
-            dashCellarValue.Text = $"{bottles.TotalValue().ToString():C}";
+            dashUserLbl.Text = Bottles.UserName;
+            dashNameLbl.Text = $"{Bottles.FirstName} {Bottles.LastName}";
+            dashCellarCount.Text = Bottles.BottleCount().ToString();
+            dashCellarValue.Text = $"{Bottles.TotalValue().ToString():C}";
 
-            var openQuery = from bottle in bottles.Bottles
+            var openQuery = from bottle in Bottles.Bottles
                             where bottle.DrinkByStart <= DateTime.Today.Year
                             orderby bottle.DrinkByStart descending, bottle.BottleName ascending
                             select bottle;
@@ -145,7 +148,7 @@ namespace Cellar
                 * invList- List of bottles in the collection
             */
             invList.Items.Clear();
-            foreach (Models.Bottle b in bottles.Bottles)
+            foreach (Models.Bottle b in Bottles.Bottles)
             {
                 invList.Items.Add(b.ToString());
             }
@@ -174,11 +177,11 @@ namespace Cellar
                 * statCategoryChart- 
             */
 
-            statBottleTotal.Text = $"{bottles.BottleCount()}";
-            statValueTotal.Text = $"{bottles.TotalValue():C}";
-            statAvgCost.Text = $"{bottles.AvgBottleCost():C}";
-            statAvgAge.Text = $"{bottles.AvgBottleAge():F2} yrs";
-            statAvgPeak.Text = $"{bottles.AvgPeakYear()}";
+            statBottleTotal.Text = $"{Bottles.BottleCount()}";
+            statValueTotal.Text = $"{Bottles.TotalValue():C}";
+            statAvgCost.Text = $"{Bottles.AvgBottleCost():C}";
+            statAvgAge.Text = $"{Bottles.AvgBottleAge():F2} yrs";
+            statAvgPeak.Text = $"{Bottles.AvgPeakYear()}";
 
             SetCountryChart();
             SetCategoryChart();
@@ -186,13 +189,13 @@ namespace Cellar
 
         private void SetCountryChart()
         {
-            //List<string[]> data = //bottles.CountryBreakdown();
-            List<string[]> data = new List<string[]>();
-            data.Add(new string[] { "USA", "3" });
-            data.Add(new string[] { "France", "7" });
-            data.Add(new string[] { "Germany", "1" });
-            data.Add(new string[] { "Spain", "2" });
-            data.Add(new string[] { "Italy", "2" });
+            List<string[]> data = Bottles.CountryBreakdown();
+            //List<string[]> data = new List<string[]>();
+            //data.Add(new string[] { "USA", "3" });
+            //data.Add(new string[] { "France", "7" });
+            //data.Add(new string[] { "Germany", "1" });
+            //data.Add(new string[] { "Spain", "2" });
+            //data.Add(new string[] { "Italy", "2" });
 
             statCountryChart.Series.Clear();
 
@@ -223,8 +226,8 @@ namespace Cellar
 
         private void SetCategoryChart()
         {
-            //int[] data = bottles.CategoryBreakdown();
-            int[] data = new int[] { 3, 6, 4, 7, 9, 12, 4, 6 };
+            int[] data = Bottles.CategoryBreakdown();
+            //int[] data = new int[] { 3, 6, 4, 7, 9, 12, 4, 6 };
             statCategoryChart.Series.Clear();
 
             System.Windows.Forms.DataVisualization.Charting.Series categories = null;
@@ -279,14 +282,14 @@ namespace Cellar
             //Delete the collection where username = bottles.Username
             foreach (Models.Collection record in records.ToList())
             {
-                if (record.UserName == bottles.UserName)
+                if (record.UserName == Bottles.UserName)
                 {
                     records.Remove(record);
                 }
             }
 
             //Add the current collection
-            records.Add(bottles);
+            records.Add(Bottles);
 
             //Store them in the database
             Serializer.StoreCollections(records);
@@ -312,27 +315,27 @@ namespace Cellar
             switch (invFilterBy.SelectedText)
             {
                 case "Vintage":
-                    bottles.Bottles = bottles.Bottles.OrderByDescending(o => o.Vintage).ToList();
+                    Bottles.Bottles = Bottles.Bottles.OrderByDescending(o => o.Vintage).ToList();
                     break;
                 case "Name":
-                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.BottleName).ToList();
+                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.BottleName).ToList();
                     break;
                 case "Country":
-                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.Country).ToList();
+                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.Country).ToList();
                     break;
                 case "Category":
-                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.TypeCode).ToList();
+                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.TypeCode).ToList();
                     break;
                 case "Importance":
-                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.ImportanceCode).ToList();
+                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.ImportanceCode).ToList();
                     break;
                 case "Drink-by Window":
-                    bottles.Bottles = bottles.Bottles.OrderBy(o => o.DrinkByStart).ToList();
+                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.DrinkByStart).ToList();
                     break;
                 default:
                     break;
             }
-            foreach (Models.Bottle b in bottles.Bottles)
+            foreach (Models.Bottle b in Bottles.Bottles)
             {
                 invList.Items.Add(b.ToString());
             }
@@ -341,7 +344,7 @@ namespace Cellar
         private void InvList_DoubleClick(object sender, EventArgs e)
         {
             // Open Bottle Detail for the selected bottle
-            BottleDetails details = new BottleDetails(bottles.Bottles[invList.SelectedIndex]);
+            BottleDetails details = new BottleDetails(this, Bottles.Bottles[invList.SelectedIndex]);
             details.Show();
         }
 
@@ -363,21 +366,37 @@ namespace Cellar
         {
             // Add rating to the ratings list from text in the pts and critic fields
 
-            Regex checkPts = new Regex("[/d|/d/d|/d/d/d|+]");
+            bool plus = addRatingPts.Text.Contains("+");
 
             if (addRatingPts.Text == "" || addRatingCritic.Text == "" || addRatingPts.Text == "pts" || addRatingCritic.Text == "critic")
-            {
-                MessageBox.Show("Please input a valid rating value.", "Invalid Input",
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            }
-            else if (checkPts.Match(addRatingPts.Text).ToString() != addRatingPts.Text)
             {
                 MessageBox.Show("Please input rating points and critic.", "Invalid Input",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
             else
             {
-                addRatingList.Items.Add(new string[2] { addRatingPts.Text, addRatingCritic.Text });
+                try
+                {
+                    if (!plus && (Convert.ToInt32(addRatingPts.Text) < 0 || Convert.ToInt32(addRatingPts.Text) > 100))
+                    {
+                        MessageBox.Show("Please input a valid rating value (0-100, may include).", "Invalid Input",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    }
+                    else if  (plus && (Convert.ToInt32(addRatingPts.Text.Remove(addRatingPts.Text.Length - 1, 1)) < 0 || Convert.ToInt32(addRatingPts.Text.Remove(addRatingPts.Text.Length - 1, 1)) > 100))
+                    {
+                        MessageBox.Show("Please input a valid rating value (0-100, may include).", "Invalid Input",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        addRatingList.Items.Add(new string[2] { addRatingPts.Text, addRatingCritic.Text });
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Please input a valid rating value (0-100, may include).", "Invalid Input",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -446,7 +465,7 @@ namespace Cellar
                 Convert.ToInt32(addDrinkByEnd.Text), Convert.ToInt32(addDrinkByPeak.Text), Convert.ToDecimal(addCost.Text),
                 addLocation.Text, addType.SelectedIndex, addImportance.SelectedIndex, ratingsList, addNotes.Text,
                 Serializer.SerializePhoto(addLabelPicture.Image));
-            bottles.Bottles.Add(newBottle);
+            Bottles.Bottles.Add(newBottle);
 
             MessageBox.Show("The bottle has been added to the collection!", "Bottle Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AddBottleReset();
@@ -500,10 +519,10 @@ namespace Cellar
                 }
                 else
                 {
-                    bottles.FirstName = firstName.Text;
-                    bottles.LastName = lastName.Text;
-                    bottles.UserName = username.Text;
-                    bottles.PinNumber = Convert.ToInt32(newPIN1.Text + newPIN2.Text + newPIN3.Text + newPIN4.Text);
+                    Bottles.FirstName = firstName.Text;
+                    Bottles.LastName = lastName.Text;
+                    Bottles.UserName = username.Text;
+                    Bottles.PinNumber = Convert.ToInt32(newPIN1.Text + newPIN2.Text + newPIN3.Text + newPIN4.Text);
                     pnlUserMain.Visible = true;
                     pnlUserEdit.Visible = false;
                 }
@@ -519,7 +538,7 @@ namespace Cellar
             //If PIN is correct, show change panel, and set current values to fields. Otherwise, show user panel
             try
             {
-                if (Convert.ToInt32(pin1.Text + pin2.Text + pin3.Text + pin4.Text) == bottles.PinNumber)
+                if (Convert.ToInt32(pin1.Text + pin2.Text + pin3.Text + pin4.Text) == Bottles.PinNumber)
                 {
                     pnlUserEdit.Visible = true;
                     pnlUserPIN.Visible = false;
