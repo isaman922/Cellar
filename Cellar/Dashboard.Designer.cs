@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -295,7 +295,7 @@
             this.btnEditUser.Location = new System.Drawing.Point(120, 185);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(75, 23);
-            this.btnEditUser.TabIndex = 32;
+            this.btnEditUser.TabIndex = 0;
             this.btnEditUser.Text = "Edit";
             this.btnEditUser.UseVisualStyleBackColor = false;
             this.btnEditUser.Click += new System.EventHandler(this.BtnEditUser_Click);
@@ -836,11 +836,11 @@
             // addCost
             // 
             this.addCost.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addCost.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.addCost.ForeColor = System.Drawing.SystemColors.WindowText;
             this.addCost.Location = new System.Drawing.Point(424, 160);
             this.addCost.Name = "addCost";
             this.addCost.Size = new System.Drawing.Size(133, 25);
-            this.addCost.TabIndex = 41;
+            this.addCost.TabIndex = 10;
             // 
             // label17
             // 
@@ -858,7 +858,7 @@
             this.addLocation.Location = new System.Drawing.Point(144, 191);
             this.addLocation.Name = "addLocation";
             this.addLocation.Size = new System.Drawing.Size(219, 25);
-            this.addLocation.TabIndex = 39;
+            this.addLocation.TabIndex = 11;
             // 
             // label16
             // 
@@ -890,7 +890,7 @@
             this.btnAddRating.Location = new System.Drawing.Point(334, 281);
             this.btnAddRating.Name = "btnAddRating";
             this.btnAddRating.Size = new System.Drawing.Size(29, 29);
-            this.btnAddRating.TabIndex = 36;
+            this.btnAddRating.TabIndex = 16;
             this.btnAddRating.Text = "+";
             this.btnAddRating.UseVisualStyleBackColor = false;
             this.btnAddRating.Click += new System.EventHandler(this.BtnAddRating_Click);
@@ -902,7 +902,7 @@
             this.addRatingCritic.Location = new System.Drawing.Point(195, 283);
             this.addRatingCritic.Name = "addRatingCritic";
             this.addRatingCritic.Size = new System.Drawing.Size(115, 25);
-            this.addRatingCritic.TabIndex = 35;
+            this.addRatingCritic.TabIndex = 15;
             this.addRatingCritic.Text = "critic";
             this.addRatingCritic.TextChanged += new System.EventHandler(this.AddRatingCritic_TextChanged);
             // 
@@ -913,7 +913,7 @@
             this.addRatingPts.Location = new System.Drawing.Point(145, 283);
             this.addRatingPts.Name = "addRatingPts";
             this.addRatingPts.Size = new System.Drawing.Size(44, 25);
-            this.addRatingPts.TabIndex = 34;
+            this.addRatingPts.TabIndex = 14;
             this.addRatingPts.Text = "pts";
             this.addRatingPts.TextChanged += new System.EventHandler(this.AddRatingPts_TextChanged);
             // 
@@ -935,7 +935,7 @@
             this.addNotes.Multiline = true;
             this.addNotes.Name = "addNotes";
             this.addNotes.Size = new System.Drawing.Size(330, 71);
-            this.addNotes.TabIndex = 32;
+            this.addNotes.TabIndex = 17;
             // 
             // label15
             // 
@@ -959,7 +959,7 @@
             this.addImportance.Location = new System.Drawing.Point(145, 251);
             this.addImportance.Name = "addImportance";
             this.addImportance.Size = new System.Drawing.Size(218, 26);
-            this.addImportance.TabIndex = 30;
+            this.addImportance.TabIndex = 13;
             // 
             // label14
             // 
@@ -987,7 +987,7 @@
             this.addType.Location = new System.Drawing.Point(145, 220);
             this.addType.Name = "addType";
             this.addType.Size = new System.Drawing.Size(218, 26);
-            this.addType.TabIndex = 28;
+            this.addType.TabIndex = 12;
             // 
             // label13
             // 
@@ -1006,7 +1006,7 @@
             this.addDrinkByPeak.Location = new System.Drawing.Point(319, 160);
             this.addDrinkByPeak.Name = "addDrinkByPeak";
             this.addDrinkByPeak.Size = new System.Drawing.Size(44, 25);
-            this.addDrinkByPeak.TabIndex = 26;
+            this.addDrinkByPeak.TabIndex = 9;
             this.addDrinkByPeak.Text = "year";
             this.addDrinkByPeak.TextChanged += new System.EventHandler(this.AddDrinkByPeak_TextChanged);
             // 
@@ -1037,7 +1037,7 @@
             this.addDrinkByEnd.Location = new System.Drawing.Point(209, 160);
             this.addDrinkByEnd.Name = "addDrinkByEnd";
             this.addDrinkByEnd.Size = new System.Drawing.Size(44, 25);
-            this.addDrinkByEnd.TabIndex = 23;
+            this.addDrinkByEnd.TabIndex = 8;
             this.addDrinkByEnd.Text = "year";
             this.addDrinkByEnd.TextChanged += new System.EventHandler(this.AddDrinkByEnd_TextChanged);
             // 
@@ -1048,7 +1048,7 @@
             this.addDrinkByStart.Location = new System.Drawing.Point(145, 160);
             this.addDrinkByStart.Name = "addDrinkByStart";
             this.addDrinkByStart.Size = new System.Drawing.Size(44, 25);
-            this.addDrinkByStart.TabIndex = 22;
+            this.addDrinkByStart.TabIndex = 7;
             this.addDrinkByStart.Text = "year";
             this.addDrinkByStart.TextChanged += new System.EventHandler(this.AddDrinkByStart_TextChanged);
             // 
@@ -1092,7 +1092,7 @@
             this.btnUploadLabel.Location = new System.Drawing.Point(2, 238);
             this.btnUploadLabel.Name = "btnUploadLabel";
             this.btnUploadLabel.Size = new System.Drawing.Size(177, 34);
-            this.btnUploadLabel.TabIndex = 20;
+            this.btnUploadLabel.TabIndex = 0;
             this.btnUploadLabel.Text = "Upload Label Image";
             this.btnUploadLabel.UseVisualStyleBackColor = false;
             this.btnUploadLabel.Click += new System.EventHandler(this.BtnUploadLabel_Click);
@@ -1112,7 +1112,7 @@
             this.addSize.Location = new System.Drawing.Point(386, 131);
             this.addSize.Name = "addSize";
             this.addSize.Size = new System.Drawing.Size(171, 26);
-            this.addSize.TabIndex = 19;
+            this.addSize.TabIndex = 6;
             // 
             // label9
             // 
@@ -1130,7 +1130,7 @@
             this.addStyle.Location = new System.Drawing.Point(145, 130);
             this.addStyle.Name = "addStyle";
             this.addStyle.Size = new System.Drawing.Size(179, 25);
-            this.addStyle.TabIndex = 16;
+            this.addStyle.TabIndex = 5;
             // 
             // label3
             // 
@@ -1148,7 +1148,7 @@
             this.addRegion.Location = new System.Drawing.Point(386, 100);
             this.addRegion.Name = "addRegion";
             this.addRegion.Size = new System.Drawing.Size(171, 25);
-            this.addRegion.TabIndex = 14;
+            this.addRegion.TabIndex = 4;
             // 
             // label4
             // 
@@ -1166,7 +1166,7 @@
             this.addCountry.Location = new System.Drawing.Point(146, 100);
             this.addCountry.Name = "addCountry";
             this.addCountry.Size = new System.Drawing.Size(127, 25);
-            this.addCountry.TabIndex = 12;
+            this.addCountry.TabIndex = 3;
             // 
             // label6
             // 
@@ -1185,7 +1185,7 @@
             this.addVintage.Location = new System.Drawing.Point(447, 70);
             this.addVintage.Name = "addVintage";
             this.addVintage.Size = new System.Drawing.Size(110, 25);
-            this.addVintage.TabIndex = 10;
+            this.addVintage.TabIndex = 2;
             this.addVintage.Text = "year";
             this.addVintage.TextChanged += new System.EventHandler(this.AddVintage_TextChanged);
             // 
@@ -1205,7 +1205,7 @@
             this.addProducer.Location = new System.Drawing.Point(147, 70);
             this.addProducer.Name = "addProducer";
             this.addProducer.Size = new System.Drawing.Size(216, 25);
-            this.addProducer.TabIndex = 8;
+            this.addProducer.TabIndex = 1;
             // 
             // label18
             // 
@@ -1223,7 +1223,7 @@
             this.addName.Location = new System.Drawing.Point(147, 18);
             this.addName.Name = "addName";
             this.addName.Size = new System.Drawing.Size(410, 25);
-            this.addName.TabIndex = 6;
+            this.addName.TabIndex = 0;
             // 
             // label19
             // 
@@ -1244,7 +1244,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(307, 488);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(192, 58);
-            this.btnSubmit.TabIndex = 4;
+            this.btnSubmit.TabIndex = 19;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
@@ -1258,7 +1258,7 @@
             this.btnClear.Location = new System.Drawing.Point(91, 488);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(192, 58);
-            this.btnClear.TabIndex = 3;
+            this.btnClear.TabIndex = 18;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -1289,7 +1289,7 @@
             this.invFilterBy.Location = new System.Drawing.Point(79, 9);
             this.invFilterBy.Name = "invFilterBy";
             this.invFilterBy.Size = new System.Drawing.Size(503, 26);
-            this.invFilterBy.TabIndex = 3;
+            this.invFilterBy.TabIndex = 0;
             this.invFilterBy.SelectedIndexChanged += new System.EventHandler(this.InvFilterBy_SelectedIndexChanged);
             // 
             // label20
@@ -1328,7 +1328,7 @@
             this.invList.Name = "invList";
             this.invList.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.invList.Size = new System.Drawing.Size(574, 452);
-            this.invList.TabIndex = 0;
+            this.invList.TabIndex = 1;
             this.invList.DoubleClick += new System.EventHandler(this.InvList_DoubleClick);
             // 
             // statsPanel
@@ -1355,36 +1355,36 @@
             // 
             // statCategoryChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.statCategoryChart.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Name = "Legend1";
-            this.statCategoryChart.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.statCategoryChart.ChartAreas.Add(chartArea5);
+            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend5.Name = "Legend1";
+            this.statCategoryChart.Legends.Add(legend5);
             this.statCategoryChart.Location = new System.Drawing.Point(301, 255);
             this.statCategoryChart.Name = "statCategoryChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Category";
-            this.statCategoryChart.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Legend = "Legend1";
+            series5.Name = "Category";
+            this.statCategoryChart.Series.Add(series5);
             this.statCategoryChart.Size = new System.Drawing.Size(250, 250);
             this.statCategoryChart.TabIndex = 21;
             this.statCategoryChart.Text = "chart1";
             // 
             // statCountryChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.statCountryChart.ChartAreas.Add(chartArea2);
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.statCountryChart.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.statCountryChart.ChartAreas.Add(chartArea6);
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend6.Name = "Legend1";
+            this.statCountryChart.Legends.Add(legend6);
             this.statCountryChart.Location = new System.Drawing.Point(8, 255);
             this.statCountryChart.Name = "statCountryChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Country";
-            this.statCountryChart.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Country";
+            this.statCountryChart.Series.Add(series6);
             this.statCountryChart.Size = new System.Drawing.Size(250, 250);
             this.statCountryChart.TabIndex = 20;
             this.statCountryChart.Text = "chart1";
@@ -1522,10 +1522,10 @@
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.statsPanel);
-            this.Controls.Add(this.inventoryPanel);
             this.Controls.Add(this.addPanel);
             this.Controls.Add(this.dashboardPanel);
+            this.Controls.Add(this.statsPanel);
+            this.Controls.Add(this.inventoryPanel);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(898, 722);
             this.MinimumSize = new System.Drawing.Size(898, 722);

@@ -76,7 +76,23 @@ namespace Cellar.Models
         public override string ToString()
         {
             //Reurn the string to be displayed in the inventory list
-            string bottleSummary = $"{Vintage} {BottleName}, {Subregion}, {Country}, Drink {DrinkByStart} - {DrinkByEnd}: {ImportanceCode}";
+            string importanceText = "";
+            switch (importanceCode)
+            {
+                case 0:
+                    importanceText = "Ceremonial";
+                    break;
+                case 1:
+                    importanceText = "Special";
+                    break;
+                case 2:
+                    importanceText = "Casual";
+                    break;
+                case 3:
+                    importanceText = "Everyday";
+                    break;
+            }
+            string bottleSummary = $"{Vintage} {BottleName}, {Subregion}, {Country}, Drink {DrinkByStart} - {DrinkByEnd}: {importanceText}";
             return bottleSummary;
         }
 

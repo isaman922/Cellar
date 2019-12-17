@@ -416,11 +416,19 @@ namespace Cellar
         {
             //Clear all fields after checking with user
             addName.Text = addProducer.Text = addVintage.Text = addCountry.Text = addRegion.Text =
-                addStyle.Text = addSize.Text = addDrinkByStart.Text = addDrinkByEnd.Text =
-                addDrinkByPeak.Text = addCost.Text = addLocation.Text = addType.Text =
-                addImportance.Text = addRatingPts.Text = addRatingCritic.Text = addNotes.Text =
+                addStyle.Text = addSize.Text =  addCost.Text = addLocation.Text = addType.Text =
+                addImportance.Text =  addNotes.Text =
                 addRatingList.Text = addNotes.Text = default;
             addLabelPicture.Image = Properties.Resources.Wine_Bottle;
+
+            addDrinkByStart.Text = "year";
+            addDrinkByEnd.Text = "year";
+            addDrinkByPeak.Text = "year";
+            addRatingPts.Text = "pts";
+            addRatingCritic.Text = "critic";
+
+            addDrinkByStart.ForeColor = addDrinkByEnd.ForeColor = addDrinkByPeak.ForeColor =
+                addRatingPts.ForeColor = addRatingCritic.ForeColor = SystemColors.ScrollBar;
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)

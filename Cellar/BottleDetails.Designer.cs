@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BottleDetails));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.txtRatings = new System.Windows.Forms.TextBox();
+            this.lblCost = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblSize = new System.Windows.Forms.Label();
+            this.lblImportance = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
             this.lblStyle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -50,13 +57,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblOrigin = new System.Windows.Forms.Label();
             this.lblProducer = new System.Windows.Forms.Label();
-            this.lblCost = new System.Windows.Forms.Label();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.lblSize = new System.Windows.Forms.Label();
-            this.lblImportance = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
-            this.txtRatings = new System.Windows.Forms.TextBox();
-            this.txtNotes = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labelPicture)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +95,81 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(858, 537);
             this.panel2.TabIndex = 2;
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(130, 383);
+            this.txtNotes.MaximumSize = new System.Drawing.Size(359, 90);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.ReadOnly = true;
+            this.txtNotes.Size = new System.Drawing.Size(359, 90);
+            this.txtNotes.TabIndex = 67;
+            // 
+            // txtRatings
+            // 
+            this.txtRatings.Location = new System.Drawing.Point(19, 383);
+            this.txtRatings.MaximumSize = new System.Drawing.Size(89, 90);
+            this.txtRatings.Multiline = true;
+            this.txtRatings.Name = "txtRatings";
+            this.txtRatings.ReadOnly = true;
+            this.txtRatings.Size = new System.Drawing.Size(89, 90);
+            this.txtRatings.TabIndex = 66;
+            // 
+            // lblCost
+            // 
+            this.lblCost.AutoSize = true;
+            this.lblCost.BackColor = System.Drawing.Color.Linen;
+            this.lblCost.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCost.Location = new System.Drawing.Point(66, 228);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(70, 21);
+            this.lblCost.TabIndex = 65;
+            this.lblCost.Text = "$300.00";
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.BackColor = System.Drawing.Color.Linen;
+            this.lblLocation.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocation.Location = new System.Drawing.Point(178, 256);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(168, 21);
+            this.lblLocation.TabIndex = 64;
+            this.lblLocation.Text = "Main Cellar, Shelf 2";
+            // 
+            // lblSize
+            // 
+            this.lblSize.AutoSize = true;
+            this.lblSize.BackColor = System.Drawing.Color.Linen;
+            this.lblSize.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSize.Location = new System.Drawing.Point(66, 200);
+            this.lblSize.Name = "lblSize";
+            this.lblSize.Size = new System.Drawing.Size(69, 21);
+            this.lblSize.TabIndex = 61;
+            this.lblSize.Text = "750 mL";
+            // 
+            // lblImportance
+            // 
+            this.lblImportance.AutoSize = true;
+            this.lblImportance.BackColor = System.Drawing.Color.Linen;
+            this.lblImportance.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImportance.Location = new System.Drawing.Point(128, 312);
+            this.lblImportance.Name = "lblImportance";
+            this.lblImportance.Size = new System.Drawing.Size(97, 21);
+            this.lblImportance.TabIndex = 63;
+            this.lblImportance.Text = "Ceremonial";
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.BackColor = System.Drawing.Color.Linen;
+            this.lblType.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(146, 284);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(87, 21);
+            this.lblType.TabIndex = 62;
+            this.lblType.Text = "Red Wine";
             // 
             // lblStyle
             // 
@@ -320,81 +395,6 @@
             this.lblProducer.TabIndex = 45;
             this.lblProducer.Text = "Producer Name Goes Here";
             // 
-            // lblCost
-            // 
-            this.lblCost.AutoSize = true;
-            this.lblCost.BackColor = System.Drawing.Color.Linen;
-            this.lblCost.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCost.Location = new System.Drawing.Point(66, 228);
-            this.lblCost.Name = "lblCost";
-            this.lblCost.Size = new System.Drawing.Size(70, 21);
-            this.lblCost.TabIndex = 65;
-            this.lblCost.Text = "$300.00";
-            // 
-            // lblLocation
-            // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.BackColor = System.Drawing.Color.Linen;
-            this.lblLocation.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocation.Location = new System.Drawing.Point(178, 256);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(168, 21);
-            this.lblLocation.TabIndex = 64;
-            this.lblLocation.Text = "Main Cellar, Shelf 2";
-            // 
-            // lblSize
-            // 
-            this.lblSize.AutoSize = true;
-            this.lblSize.BackColor = System.Drawing.Color.Linen;
-            this.lblSize.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSize.Location = new System.Drawing.Point(66, 200);
-            this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(69, 21);
-            this.lblSize.TabIndex = 61;
-            this.lblSize.Text = "750 mL";
-            // 
-            // lblImportance
-            // 
-            this.lblImportance.AutoSize = true;
-            this.lblImportance.BackColor = System.Drawing.Color.Linen;
-            this.lblImportance.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImportance.Location = new System.Drawing.Point(128, 312);
-            this.lblImportance.Name = "lblImportance";
-            this.lblImportance.Size = new System.Drawing.Size(97, 21);
-            this.lblImportance.TabIndex = 63;
-            this.lblImportance.Text = "Ceremonial";
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.BackColor = System.Drawing.Color.Linen;
-            this.lblType.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(146, 284);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(87, 21);
-            this.lblType.TabIndex = 62;
-            this.lblType.Text = "Red Wine";
-            // 
-            // txtRatings
-            // 
-            this.txtRatings.Location = new System.Drawing.Point(19, 383);
-            this.txtRatings.MaximumSize = new System.Drawing.Size(89, 90);
-            this.txtRatings.Multiline = true;
-            this.txtRatings.Name = "txtRatings";
-            this.txtRatings.ReadOnly = true;
-            this.txtRatings.Size = new System.Drawing.Size(89, 90);
-            this.txtRatings.TabIndex = 66;
-            // 
-            // txtNotes
-            // 
-            this.txtNotes.Location = new System.Drawing.Point(130, 383);
-            this.txtNotes.MaximumSize = new System.Drawing.Size(359, 90);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.ReadOnly = true;
-            this.txtNotes.Size = new System.Drawing.Size(359, 90);
-            this.txtNotes.TabIndex = 67;
-            // 
             // BottleDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +405,7 @@
             this.MaximumSize = new System.Drawing.Size(898, 600);
             this.MinimumSize = new System.Drawing.Size(898, 600);
             this.Name = "BottleDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BottleDetails";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
