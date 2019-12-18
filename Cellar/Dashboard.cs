@@ -536,11 +536,48 @@ namespace Cellar
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (isEditing)
+            if (!Int32.TryParse(addVintage.Text, out int i))
             {
-                bottles.Bottles.Remove(bottleBeingEdited);
+                MessageBox.Show("Vintage must be an integer.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            AddBottle();
+            else if (!addSize.Items.Contains(addSize.Text))
+            {
+                MessageBox.Show("Please select a bottle size from the list.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!Int32.TryParse(addDrinkByStart.Text, out i)|| !Int32.TryParse(addDrinkByEnd.Text, out i)|| !Int32.TryParse(addDrinkByPeak.Text, out i))
+            {
+                MessageBox.Show("Drink by years must be integers.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!Decimal.TryParse(addCost.Text, out decimal j))
+            {
+                MessageBox.Show("Cost must be numeric.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!addType.Items.Contains(addType.Text))
+            {
+                MessageBox.Show("Please select a category code from the list.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!addImportance.Items.Contains(addImportance.Text))
+            {
+                MessageBox.Show("Please select an importance code from the list.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Convert.ToInt32(addDrinkByPeak) > Convert.ToInt32(addDrinkByEnd))
+            {
+                MessageBox.Show("Drink-by peak is later than the end of the drink-by window.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (addName.Text == "" || addProducer.Text == ""|| addVintage.Text == "" || addCountry.Text == "" || addRegion.Text == "" || addStyle.Text == ""
+                || addDrinkByStart.Text == "" || addDrinkByEnd.Text == "" || addDrinkByPeak.Text == "" ||addCost.Text == "" || addLocation.Text == "" || addType.Text == ""
+                || addImportance.Text == "")
+            {
+                MessageBox.Show("Please complete all fields.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (isEditing)
+                {
+                    bottles.Bottles.Remove(bottleBeingEdited);
+                }
+                AddBottle();
+            }
         }
 
         private void AddVintage_TextChanged(object sender, EventArgs e)

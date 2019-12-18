@@ -188,62 +188,50 @@ namespace Cellar
         {
             if (txt.Text != "") { SelectNextControl(txt, true, false, true, false); }
         }
-
         private void Pin1_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin1);
         }
-
         private void Pin2_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin2);
         }
-
         private void Pin3_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin3);
         }
-
         private void Pin4_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin4);
         }
-
         private void SignUpPIN1A_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(signUpPIN1A);
         }
-
         private void SignUpPIN2A_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(signUpPIN2A);
         }
-
         private void SignUpPIN3A_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(signUpPIN3A);
         }
-
         private void SignUpPIN4A_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(signUpPIN4A);
         }
-
         private void SignUpPIN1B_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(signUpPIN1B);
         }
-
         private void SignUpPIN2B_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(signUpPIN2B);
         }
-
         private void SignUpPIN3B_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(signUpPIN3B);
         }
-
         private void SignUpPIN4B_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(signUpPIN4B);
