@@ -81,31 +81,48 @@ namespace Cellar.Models
         public override string ToString()
         {
             //Reurn the string to be displayed in the inventory list
-            string importanceText = "";
-            switch (importanceCode)
+            //string importanceText = "";
+            //switch (importanceCode)
+            //{
+            //    case 0:
+            //        importanceText = "Ceremonial";
+            //        break;
+            //    case 1:
+            //        importanceText = "Special";
+            //        break;
+            //    case 2:
+            //        importanceText = "Casual";
+            //        break;
+            //    case 3:
+            //        importanceText = "Everyday";
+            //        break;
+            //}
+
+            string bottleSummary = "";
+            if (vintage != 0)
             {
-                case 0:
-                    importanceText = "Ceremonial";
-                    break;
-                case 1:
-                    importanceText = "Special";
-                    break;
-                case 2:
-                    importanceText = "Casual";
-                    break;
-                case 3:
-                    importanceText = "Everyday";
-                    break;
+                bottleSummary = $"{Vintage} {BottleName}, {Subregion}, {Country}, Best {DrinkByStart} - {DrinkByEnd}";
             }
-            string bottleSummary = $"{Vintage} {BottleName}, {Subregion}, {Country}, Drink {DrinkByStart} - {DrinkByEnd}: {importanceText}";
+            else
+            {
+                bottleSummary = $"N/V  {BottleName}, {Subregion}, {Country}, Best {DrinkByStart} - {DrinkByEnd}";
+            }
             return bottleSummary;
         }
 
         public string ToOpenString()
         {
             //Return the string to be displayed on the dashboard of bottles to open
-            string summary = $"{Vintage} {BottleName}, Drink {DrinkByStart} - {DrinkByEnd} (peak {DrinkByPeak})";
 
+            string summary = "";
+            if (vintage != 0)
+            {
+                summary = $"{Vintage + " " + BottleName}   *** Drink {DrinkByStart} - {DrinkByEnd} ***";
+            }
+            else
+            {
+                summary = $"{"N/V  " + BottleName}   *** Drink {DrinkByStart} - {DrinkByEnd} ***";
+            }
             return summary;
         }
     }

@@ -19,7 +19,14 @@ namespace Cellar
         {
             InitializeComponent();
 
-            lblVintName.Text = $"{bottle.Vintage} {bottle.BottleName}";
+            if (bottle.Vintage != 0)
+            {
+                lblVintName.Text = $"{bottle.Vintage} {bottle.BottleName}";
+            }
+            else
+            {
+                lblVintName.Text = $"N/V {bottle.BottleName}";
+            }
             lblProducer.Text = bottle.Producer;
             lblOrigin.Text = $"{bottle.Subregion}, {bottle.Country}";
             lblStyle.Text = $"{bottle.StyleOrVarietal}";

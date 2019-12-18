@@ -184,6 +184,7 @@
             this.pin4.Location = new System.Drawing.Point(444, 258);
             this.pin4.MaxLength = 1;
             this.pin4.Name = "pin4";
+            this.pin4.PasswordChar = '*';
             this.pin4.Size = new System.Drawing.Size(31, 30);
             this.pin4.TabIndex = 4;
             this.pin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -195,6 +196,7 @@
             this.pin3.Location = new System.Drawing.Point(407, 258);
             this.pin3.MaxLength = 1;
             this.pin3.Name = "pin3";
+            this.pin3.PasswordChar = '*';
             this.pin3.Size = new System.Drawing.Size(31, 30);
             this.pin3.TabIndex = 3;
             this.pin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -206,6 +208,7 @@
             this.pin2.Location = new System.Drawing.Point(370, 258);
             this.pin2.MaxLength = 1;
             this.pin2.Name = "pin2";
+            this.pin2.PasswordChar = '*';
             this.pin2.Size = new System.Drawing.Size(31, 30);
             this.pin2.TabIndex = 2;
             this.pin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -228,6 +231,7 @@
             this.pin1.Location = new System.Drawing.Point(333, 258);
             this.pin1.MaxLength = 1;
             this.pin1.Name = "pin1";
+            this.pin1.PasswordChar = '*';
             this.pin1.Size = new System.Drawing.Size(31, 30);
             this.pin1.TabIndex = 1;
             this.pin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -272,6 +276,7 @@
             this.signUpPIN4B.Location = new System.Drawing.Point(591, 277);
             this.signUpPIN4B.MaxLength = 1;
             this.signUpPIN4B.Name = "signUpPIN4B";
+            this.signUpPIN4B.PasswordChar = '*';
             this.signUpPIN4B.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN4B.TabIndex = 11;
             this.signUpPIN4B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -283,6 +288,7 @@
             this.signUpPIN3B.Location = new System.Drawing.Point(554, 277);
             this.signUpPIN3B.MaxLength = 1;
             this.signUpPIN3B.Name = "signUpPIN3B";
+            this.signUpPIN3B.PasswordChar = '*';
             this.signUpPIN3B.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN3B.TabIndex = 10;
             this.signUpPIN3B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -294,6 +300,7 @@
             this.signUpPIN2B.Location = new System.Drawing.Point(517, 277);
             this.signUpPIN2B.MaxLength = 1;
             this.signUpPIN2B.Name = "signUpPIN2B";
+            this.signUpPIN2B.PasswordChar = '*';
             this.signUpPIN2B.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN2B.TabIndex = 9;
             this.signUpPIN2B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -305,6 +312,7 @@
             this.signUpPIN1B.Location = new System.Drawing.Point(480, 277);
             this.signUpPIN1B.MaxLength = 1;
             this.signUpPIN1B.Name = "signUpPIN1B";
+            this.signUpPIN1B.PasswordChar = '*';
             this.signUpPIN1B.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN1B.TabIndex = 8;
             this.signUpPIN1B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -409,6 +417,7 @@
             this.signUpPIN4A.Location = new System.Drawing.Point(295, 277);
             this.signUpPIN4A.MaxLength = 1;
             this.signUpPIN4A.Name = "signUpPIN4A";
+            this.signUpPIN4A.PasswordChar = '*';
             this.signUpPIN4A.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN4A.TabIndex = 7;
             this.signUpPIN4A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -420,6 +429,7 @@
             this.signUpPIN3A.Location = new System.Drawing.Point(258, 277);
             this.signUpPIN3A.MaxLength = 1;
             this.signUpPIN3A.Name = "signUpPIN3A";
+            this.signUpPIN3A.PasswordChar = '*';
             this.signUpPIN3A.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN3A.TabIndex = 6;
             this.signUpPIN3A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -431,6 +441,7 @@
             this.signUpPIN2A.Location = new System.Drawing.Point(221, 277);
             this.signUpPIN2A.MaxLength = 1;
             this.signUpPIN2A.Name = "signUpPIN2A";
+            this.signUpPIN2A.PasswordChar = '*';
             this.signUpPIN2A.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN2A.TabIndex = 5;
             this.signUpPIN2A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -453,6 +464,7 @@
             this.signUpPIN1A.Location = new System.Drawing.Point(184, 277);
             this.signUpPIN1A.MaxLength = 1;
             this.signUpPIN1A.Name = "signUpPIN1A";
+            this.signUpPIN1A.PasswordChar = '*';
             this.signUpPIN1A.Size = new System.Drawing.Size(31, 30);
             this.signUpPIN1A.TabIndex = 4;
             this.signUpPIN1A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

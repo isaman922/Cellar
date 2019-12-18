@@ -29,29 +29,15 @@ namespace Cellar
             Bottles = collection;
             subtitle.Text = $"{collection.FirstName} {collection.LastName}'s Cellar";
 
-            dashUserLbl.Text = Bottles.UserName;
-            dashNameLbl.Text = $"{Bottles.FirstName} {Bottles.LastName}";
-            dashCellarCount.Text = Bottles.BottleCount().ToString();
-            dashCellarValue.Text = $"{Bottles.TotalValue():C}";
-
-            var openQuery = from bottle in Bottles.Bottles
-                            where bottle.DrinkByStart <= DateTime.Today.Year
-                            orderby bottle.DrinkByStart descending , bottle.BottleName ascending
-                            select bottle;
-
-            listToOpen.Items.Clear();
-            foreach (Models.Bottle b in openQuery)
-            {
-                listToOpen.Items.Add(b.ToOpenString());
-            }
-
-            dashboardPanel.Visible = true;
-            addPanel.Visible = false;
-            inventoryPanel.Visible = false;
-            statsPanel.Visible = false;
+            SetDashboard();
         }
 
         private void BtnDashboard_Click(object sender, EventArgs e)
+        {
+            SetDashboard();
+        }
+
+        private void SetDashboard()
         {
             if (isEditing)
             {
@@ -74,16 +60,37 @@ namespace Cellar
             dashCellarCount.Text = Bottles.BottleCount().ToString();
             dashCellarValue.Text = $"{Bottles.TotalValue():C}";
 
-            var openQuery = from bottle in Bottles.Bottles
-                            where bottle.DrinkByStart <= DateTime.Today.Year
-                            orderby bottle.DrinkByStart descending, bottle.BottleName ascending
-                            select bottle;
+            //var openQuery = from bottle in Bottles.Bottles
+            //                where bottle.DrinkByStart <= DateTime.Today.Year
+            //                orderby bottle.DrinkByStart ascending, bottle.BottleName ascending
+            //                select bottle;
+
+            //listToOpen.Items.Clear();
+            //foreach (Models.Bottle b in openQuery)
+            //{
+            //    listToOpen.Items.Add(b.ToOpenString());
+            //}
 
             listToOpen.Items.Clear();
+            List<Models.Bottle> updatedList = new List<Models.Bottle>();
+
+
+            var openQuery = from bottle in Bottles.Bottles
+                            where bottle.DrinkByStart <= DateTime.Today.Year
+                            orderby bottle.DrinkByStart ascending, bottle.BottleName ascending
+                            select bottle;
+
             foreach (Models.Bottle b in openQuery)
             {
-                listToOpen.Items.Add(b.ToOpenString());
+                updatedList.Add(b);
             }
+
+            foreach (Models.Bottle b in updatedList)
+            {
+                listToOpen.Items.Add(b.ToString());
+            }
+
+
 
             /*Dashboard Panel Fields:
                 *dashUserLbl- 
@@ -116,6 +123,8 @@ namespace Cellar
             addPanel.Visible = true;
             inventoryPanel.Visible = false;
             statsPanel.Visible = false;
+
+            addName.Focus();
 
             /*Add Bottle Panel Fields:
                 * addName- 
@@ -284,7 +293,7 @@ namespace Cellar
             categories.Points.AddXY("Other", data[7]);
             statCategoryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             statCategoryChart.PaletteCustomColors = new Color[] 
-            {Color.DarkRed, Color.Pink, Color.LightYellow, Color.DodgerBlue, Color.SaddleBrown, Color.Green, Color.Purple, Color.FromArgb(64,64,64)};
+            {Color.DarkRed, Color.Pink, Color.FromArgb(255,237,138), Color.DodgerBlue, Color.SaddleBrown, Color.FromArgb(130,130,130), Color.Purple, Color.Green};
 
             //hide label value if zero
             foreach (System.Windows.Forms.DataVisualization.Charting.DataPoint point in categories.Points)
@@ -532,13 +541,15 @@ namespace Cellar
             ratingsTemp.Clear();
             addRatingList.Items.Clear();
             isEditing = false;
+
+            addName.Focus();
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (!Int32.TryParse(addVintage.Text, out int i))
+            if (!Int32.TryParse(addVintage.Text, out int i) && addVintage.Text != "N/V")
             {
-                MessageBox.Show("Vintage must be an integer.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vintage must be an integer or \"N/V\".", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!addSize.Items.Contains(addSize.Text))
             {
@@ -560,10 +571,10 @@ namespace Cellar
             {
                 MessageBox.Show("Please select an importance code from the list.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (Convert.ToInt32(addDrinkByPeak) > Convert.ToInt32(addDrinkByEnd))
-            {
-                MessageBox.Show("Drink-by peak is later than the end of the drink-by window.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //else if (Convert.ToInt32(addDrinkByPeak.Text) > Convert.ToInt32(addDrinkByEnd.Text))
+            //{
+            //    MessageBox.Show("Drink-by peak is later than the end of the drink-by window.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
             else if (addName.Text == "" || addProducer.Text == ""|| addVintage.Text == "" || addCountry.Text == "" || addRegion.Text == "" || addStyle.Text == ""
                 || addDrinkByStart.Text == "" || addDrinkByEnd.Text == "" || addDrinkByPeak.Text == "" ||addCost.Text == "" || addLocation.Text == "" || addType.Text == ""
                 || addImportance.Text == "")
@@ -773,6 +784,7 @@ namespace Cellar
                 }
                 else
                 {
+                    AddBottleReset();
                     isEditing = false;
                 }
             }
@@ -781,6 +793,11 @@ namespace Cellar
         private void AddBottle()
         {
             //Convert the contents of the ratings listBox to a list of string arrays
+
+            if (addVintage.Text == "N/V")
+            {
+                addVintage.Text = "0";
+            }
 
             //Add the bottle to the collection
             Models.Bottle newBottle = new Models.Bottle(addName.Text, addProducer.Text, Convert.ToInt32(addVintage.Text),
@@ -824,7 +841,14 @@ namespace Cellar
 
             addName.Text = theBottle.BottleName;
             addProducer.Text = theBottle.Producer;
-            addVintage.Text = theBottle.Vintage.ToString();
+            if (theBottle.Vintage != 0)
+            {
+                addVintage.Text = theBottle.Vintage.ToString();
+            }
+            else
+            {
+                addVintage.Text = "N/V";
+            }
             addCountry.Text = theBottle.Country;
             addRegion.Text = theBottle.Subregion;
             addStyle.Text = theBottle.StyleOrVarietal;
@@ -835,7 +859,9 @@ namespace Cellar
             addCost.Text = theBottle.Cost.ToString();
             addLocation.Text = theBottle.Location;
             addType.SelectedIndex = theBottle.TypeCode;
+            addType.Text = addType.Items[theBottle.TypeCode].ToString();
             addImportance.SelectedIndex = theBottle.ImportanceCode;
+            addImportance.Text = addImportance.Items[theBottle.ImportanceCode].ToString();
             addNotes.Text = theBottle.Notes;
             addLabelPicture.Image = Serializer.DeserializePhoto(theBottle.SerializedLabelImage);
         }
