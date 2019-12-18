@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -831,7 +831,7 @@
             this.addPanel.Location = new System.Drawing.Point(280, 122);
             this.addPanel.Name = "addPanel";
             this.addPanel.Size = new System.Drawing.Size(590, 549);
-            this.addPanel.TabIndex = 6;
+            this.addPanel.TabIndex = 0;
             // 
             // addCost
             // 
@@ -1070,7 +1070,7 @@
             this.panel4.Location = new System.Drawing.Point(375, 194);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(182, 277);
-            this.panel4.TabIndex = 20;
+            this.panel4.TabIndex = 18;
             // 
             // addLabelPicture
             // 
@@ -1244,7 +1244,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(307, 488);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(192, 58);
-            this.btnSubmit.TabIndex = 19;
+            this.btnSubmit.TabIndex = 20;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
@@ -1258,7 +1258,7 @@
             this.btnClear.Location = new System.Drawing.Point(91, 488);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(192, 58);
-            this.btnClear.TabIndex = 18;
+            this.btnClear.TabIndex = 19;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -1355,36 +1355,36 @@
             // 
             // statCategoryChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.statCategoryChart.ChartAreas.Add(chartArea5);
-            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend5.Name = "Legend1";
-            this.statCategoryChart.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.statCategoryChart.ChartAreas.Add(chartArea1);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Name = "Legend1";
+            this.statCategoryChart.Legends.Add(legend1);
             this.statCategoryChart.Location = new System.Drawing.Point(301, 255);
             this.statCategoryChart.Name = "statCategoryChart";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "Category";
-            this.statCategoryChart.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Category";
+            this.statCategoryChart.Series.Add(series1);
             this.statCategoryChart.Size = new System.Drawing.Size(250, 250);
             this.statCategoryChart.TabIndex = 21;
             this.statCategoryChart.Text = "chart1";
             // 
             // statCountryChart
             // 
-            chartArea6.Name = "ChartArea1";
-            this.statCountryChart.ChartAreas.Add(chartArea6);
-            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend6.Name = "Legend1";
-            this.statCountryChart.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.statCountryChart.ChartAreas.Add(chartArea2);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            this.statCountryChart.Legends.Add(legend2);
             this.statCountryChart.Location = new System.Drawing.Point(8, 255);
             this.statCountryChart.Name = "statCountryChart";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.Legend = "Legend1";
-            series6.Name = "Country";
-            this.statCountryChart.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Country";
+            this.statCountryChart.Series.Add(series2);
             this.statCountryChart.Size = new System.Drawing.Size(250, 250);
             this.statCountryChart.TabIndex = 20;
             this.statCountryChart.Text = "chart1";

@@ -21,8 +21,9 @@ namespace Cellar
 
             lblVintName.Text = $"{bottle.Vintage} {bottle.BottleName}";
             lblProducer.Text = bottle.Producer;
-            lblStyle.Text = $"{bottle.Subregion}, {bottle.Country}";
-            lblDrinkRange.Text = $"{bottle.DrinkByStart} - {bottle.DrinkByEnd} (peak{bottle.DrinkByPeak})";
+            lblOrigin.Text = $"{bottle.Subregion}, {bottle.Country}";
+            lblStyle.Text = $"{bottle.StyleOrVarietal}";
+            lblDrinkRange.Text = $"{bottle.DrinkByStart} - {bottle.DrinkByEnd} (peak {bottle.DrinkByPeak})";
             lblSize.Text = bottle.Size;
             lblCost.Text = $"{bottle.Cost:C}";
             lblLocation.Text = bottle.Location;
@@ -112,6 +113,7 @@ namespace Cellar
             if (choice == DialogResult.OK)
             {
                 theSender.Bottles.Bottles.Remove(theBottle);
+                Hide();
             }
         }
 

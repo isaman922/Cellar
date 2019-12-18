@@ -130,16 +130,23 @@ namespace Cellar.Models
 
             foreach (Bottle b in bottles)
             {
-                foreach (var entry in stats)
+                if (stats.Count != 0)
                 {
-                    if (b.Country == entry[0])
+                    foreach (var entry in stats)
                     {
-                        entry[1] = (Convert.ToInt32(entry[1]) + 1).ToString();
+                        if (b.Country == entry[0])
+                        {
+                            entry[1] = (Convert.ToInt32(entry[1]) + 1).ToString();
+                        }
+                        else
+                        {
+                            stats.Add(new string[] { b.Country, "1" });
+                        }
                     }
-                    else
-                    {
-                        stats.Add(new string[] { b.Country, "1" });
-                    }
+                }
+                else
+                {
+                    stats.Add(new string[] { b.Country, "1" });
                 }
             }
 

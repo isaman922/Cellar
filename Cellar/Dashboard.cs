@@ -18,6 +18,7 @@ namespace Cellar
         Models.Collection bottles;
         private bool isEditing = false;
         private Models.Bottle bottleBeingEdited;
+        private List<string[]> ratingsTemp = new List<string[]>();
 
         public Collection Bottles { get => bottles; set => bottles = value; }
 
@@ -52,6 +53,11 @@ namespace Cellar
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
+            if (isEditing)
+            {
+                CheckEdit();
+            }
+
             //Display the Dashboard Panel
             btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58)))));
             btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
@@ -88,6 +94,11 @@ namespace Cellar
 
         private void BtnAddBottle_Click(object sender, EventArgs e)
         {
+            if (isEditing)
+            {
+                CheckEdit();
+            }
+
             if (btnAddBottle.BackColor != System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(58))))))
             {
                 AddBottleReset();
@@ -134,6 +145,11 @@ namespace Cellar
 
         private void BtnInventory_Click(object sender, EventArgs e)
         {
+            if (isEditing)
+            {
+                CheckEdit();
+            }
+
             //Display the Inventory Panel
             btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
             btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
@@ -154,10 +170,16 @@ namespace Cellar
             {
                 invList.Items.Add(b.ToString());
             }
+            invFilterBy.SelectedIndex = 1;
         }
 
         private void BtnStats_Click(object sender, EventArgs e)
         {
+            if (isEditing)
+            {
+                CheckEdit();
+            }
+
             //Display the Statistics Panel
             btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
             btnAddBottle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
@@ -278,6 +300,11 @@ namespace Cellar
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (isEditing)
+            {
+                CheckEdit();
+            }
+
             //Get and deserialize all collections in the DB into a list of collections
             List<Models.Collection> records = Serializer.GetCollections();
 
@@ -391,7 +418,11 @@ namespace Cellar
                     }
                     else
                     {
-                        addRatingList.Items.Add(new string[2] { addRatingPts.Text, addRatingCritic.Text });
+                        ratingsTemp.Add(new string[2] { addRatingPts.Text, addRatingCritic.Text });
+                        addRatingList.Items.Add($"{addRatingPts.Text} {addRatingCritic.Text}");
+                        addRatingPts.Text = "pts";
+                        addRatingCritic.Text = "critic";
+                        addRatingCritic.ForeColor = addRatingPts.ForeColor = SystemColors.ScrollBar;
                     }
                 }
                 catch
@@ -450,6 +481,9 @@ namespace Cellar
 
             addDrinkByStart.ForeColor = addDrinkByEnd.ForeColor = addDrinkByPeak.ForeColor =
                 addRatingPts.ForeColor = addRatingCritic.ForeColor = SystemColors.ScrollBar;
+
+            ratingsTemp.Clear();
+            addRatingList.Items.Clear();
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
@@ -653,17 +687,12 @@ namespace Cellar
         private void AddBottle()
         {
             //Convert the contents of the ratings listBox to a list of string arrays
-            List<string[]> ratingsList = new List<string[]>();
-            for (int i = 0; i < addRatingList.Items.Count; i++)
-            {
-                ratingsList.Add(addRatingList.Items[i] as string[]);
-            }
 
             //Add the bottle to the collection
             Models.Bottle newBottle = new Models.Bottle(addName.Text, addProducer.Text, Convert.ToInt32(addVintage.Text),
                 addCountry.Text, addRegion.Text, addStyle.Text, addSize.Text, Convert.ToInt32(addDrinkByStart.Text),
                 Convert.ToInt32(addDrinkByEnd.Text), Convert.ToInt32(addDrinkByPeak.Text), Convert.ToDecimal(addCost.Text),
-                addLocation.Text, addType.SelectedIndex, addImportance.SelectedIndex, ratingsList, addNotes.Text,
+                addLocation.Text, addType.SelectedIndex, addImportance.SelectedIndex, ratingsTemp, addNotes.Text,
                 Serializer.SerializePhoto(addLabelPicture.Image));
             Bottles.Bottles.Add(newBottle);
 
@@ -688,7 +717,8 @@ namespace Cellar
 
             foreach (string[] item in theBottle.Ratings)
             {
-                addRatingList.Items.Add(item);
+                ratingsTemp.Add(item);
+                addRatingList.Items.Add($"{item[0]} {item[1]}");
             }
 
             addName.Text = theBottle.BottleName;
