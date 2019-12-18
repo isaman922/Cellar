@@ -133,7 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Wine Bottle.png" />
-    <Content Include="StoredData.txt" />
+    <EmbeddedResource Include="StoredData.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
