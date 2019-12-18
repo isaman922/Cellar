@@ -114,6 +114,7 @@ namespace Cellar
             //Makes the sign-in panel visible for current users
             signInPanel.Visible = true;
             ResetInput();
+            username.Focus();
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -175,6 +176,7 @@ namespace Cellar
             //Makes the sign-up panel visible for new users
             signInPanel.Visible = false;
             ResetInput();
+            signUpFName.Focus();
         }
 
         private void StartPage_FormClosed(object sender, FormClosedEventArgs e)

@@ -32,7 +32,7 @@ namespace Cellar
             dashUserLbl.Text = Bottles.UserName;
             dashNameLbl.Text = $"{Bottles.FirstName} {Bottles.LastName}";
             dashCellarCount.Text = Bottles.BottleCount().ToString();
-            dashCellarValue.Text = $"{Bottles.TotalValue().ToString():C}";
+            dashCellarValue.Text = $"{Bottles.TotalValue():C}";
 
             var openQuery = from bottle in Bottles.Bottles
                             where bottle.DrinkByStart <= DateTime.Today.Year
@@ -72,12 +72,14 @@ namespace Cellar
             dashUserLbl.Text = Bottles.UserName;
             dashNameLbl.Text = $"{Bottles.FirstName} {Bottles.LastName}";
             dashCellarCount.Text = Bottles.BottleCount().ToString();
-            dashCellarValue.Text = $"{Bottles.TotalValue().ToString():C}";
+            dashCellarValue.Text = $"{Bottles.TotalValue():C}";
 
             var openQuery = from bottle in Bottles.Bottles
                             where bottle.DrinkByStart <= DateTime.Today.Year
                             orderby bottle.DrinkByStart descending, bottle.BottleName ascending
                             select bottle;
+
+            listToOpen.Items.Clear();
             foreach (Models.Bottle b in openQuery)
             {
                 listToOpen.Items.Add(b.ToOpenString());
@@ -145,6 +147,11 @@ namespace Cellar
 
         private void BtnInventory_Click(object sender, EventArgs e)
         {
+            SetInventory();
+        }
+
+        public void SetInventory()
+        {
             if (isEditing)
             {
                 CheckEdit();
@@ -165,11 +172,7 @@ namespace Cellar
                 * invFilterBy- ComboBox allowing for list sorting
                 * invList- List of bottles in the collection
             */
-            invList.Items.Clear();
-            foreach (Models.Bottle b in Bottles.Bottles)
-            {
-                invList.Items.Add(b.ToString());
-            }
+            invFilterBy.SelectedIndex = 0;
             invFilterBy.SelectedIndex = 1;
         }
 
@@ -210,7 +213,6 @@ namespace Cellar
             SetCountryChart();
             SetCategoryChart();
         }
-
         private void SetCountryChart()
         {
             List<string[]> data = Bottles.CountryBreakdown();
@@ -247,7 +249,6 @@ namespace Cellar
                 countries.Points.AddXY(item[0], Convert.ToInt32(item[1]));
             }
         }
-
         private void SetCategoryChart()
         {
             int[] data = Bottles.CategoryBreakdown();
@@ -340,30 +341,77 @@ namespace Cellar
              * */
 
             invList.Items.Clear();
+            List<Models.Bottle> sortedList = new List<Models.Bottle>();
 
-            switch (invFilterBy.SelectedText)
+            switch (invFilterBy.SelectedIndex)
             {
-                case "Vintage":
-                    Bottles.Bottles = Bottles.Bottles.OrderByDescending(o => o.Vintage).ToList();
+                case 0:
+                    var vintageQuery = from bottle in Bottles.Bottles
+                                    orderby bottle.Vintage descending, bottle.BottleName ascending
+                                    select bottle;
+
+                    foreach (Models.Bottle b in vintageQuery)
+                    {
+                        sortedList.Add(b);
+                    }
                     break;
-                case "Name":
-                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.BottleName).ToList();
+                case 1:
+                    var nameQuery = from bottle in Bottles.Bottles
+                                       orderby bottle.BottleName ascending
+                                       select bottle;
+
+                    foreach (Models.Bottle b in nameQuery)
+                    {
+                        sortedList.Add(b);
+                    }
                     break;
-                case "Country":
+                case 2:
                     Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.Country).ToList();
+                    var originQuery = from bottle in Bottles.Bottles
+                                       orderby bottle.Country ascending, bottle.Subregion ascending, bottle.BottleName ascending
+                                       select bottle;
+
+                    foreach (Models.Bottle b in originQuery)
+                    {
+                        sortedList.Add(b);
+                    }
                     break;
-                case "Category":
+                case 3:
                     Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.TypeCode).ToList();
+                    var typeQuery = from bottle in Bottles.Bottles
+                                       orderby bottle.TypeCode ascending, bottle.BottleName ascending
+                                       select bottle;
+
+                    foreach (Models.Bottle b in typeQuery)
+                    {
+                        sortedList.Add(b);
+                    }
                     break;
-                case "Importance":
+                case 4:
                     Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.ImportanceCode).ToList();
+                    var importanceQuery = from bottle in Bottles.Bottles
+                                       orderby bottle.ImportanceCode ascending, bottle.BottleName ascending
+                                       select bottle;
+
+                    foreach (Models.Bottle b in importanceQuery)
+                    {
+                        sortedList.Add(b);
+                    }
                     break;
-                case "Drink-by Window":
-                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.DrinkByStart).ToList();
+                case 5:
+                    var drinkQuery = from bottle in Bottles.Bottles
+                                       orderby bottle.DrinkByStart ascending, bottle.BottleName ascending
+                                       select bottle;
+
+                    foreach (Models.Bottle b in drinkQuery)
+                    {
+                        sortedList.Add(b);
+                    }
                     break;
                 default:
                     break;
             }
+            Bottles.Bottles = sortedList;
             foreach (Models.Bottle b in Bottles.Bottles)
             {
                 invList.Items.Add(b.ToString());
@@ -427,7 +475,7 @@ namespace Cellar
                 }
                 catch
                 {
-                    MessageBox.Show("Please input a valid rating value (0-100, may include).", "Invalid Input",
+                    MessageBox.Show("Please input a valid rating value (0-100, may include +).", "Invalid Input",
                             MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 }
             }
@@ -469,8 +517,7 @@ namespace Cellar
             //Clear all fields after checking with user
             addName.Text = addProducer.Text = addVintage.Text = addCountry.Text = addRegion.Text =
                 addStyle.Text = addSize.Text =  addCost.Text = addLocation.Text = addType.Text =
-                addImportance.Text =  addNotes.Text =
-                addRatingList.Text = addNotes.Text = default;
+                addImportance.Text = addRatingList.Text = addNotes.Text = "";
             addLabelPicture.Image = Properties.Resources.Wine_Bottle;
 
             addDrinkByStart.Text = "year";
@@ -484,10 +531,15 @@ namespace Cellar
 
             ratingsTemp.Clear();
             addRatingList.Items.Clear();
+            isEditing = false;
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
+            if (isEditing)
+            {
+                bottles.Bottles.Remove(bottleBeingEdited);
+            }
             AddBottle();
         }
 
@@ -519,8 +571,10 @@ namespace Cellar
         private void BtnEditUser_Click(object sender, EventArgs e)
         {
             //Brings up validation panel
+            pin1.Text = pin2.Text = pin3.Text = pin4.Text = "";
             pnlUserMain.Visible = false;
             pnlUserPIN.Visible = true;
+            pin1.Focus();
         }
 
         private void BtnSaveUser_Click(object sender, EventArgs e)
@@ -545,6 +599,8 @@ namespace Cellar
                     Bottles.PinNumber = Convert.ToInt32(newPIN1.Text + newPIN2.Text + newPIN3.Text + newPIN4.Text);
                     pnlUserMain.Visible = true;
                     pnlUserEdit.Visible = false;
+                    dashNameLbl.Text = $"{Bottles.FirstName} {Bottles.LastName}";
+                    dashUserLbl.Text = Bottles.UserName;
                 }
             }
             catch
@@ -562,6 +618,20 @@ namespace Cellar
                 {
                     pnlUserEdit.Visible = true;
                     pnlUserPIN.Visible = false;
+
+                    firstName.Text = Bottles.FirstName;
+                    lastName.Text = Bottles.LastName;
+                    username.Text = Bottles.UserName;
+                    newPIN1.Text = Bottles.PinNumber.ToString()[0].ToString();
+                    newPIN2.Text = Bottles.PinNumber.ToString()[1].ToString();
+                    newPIN3.Text = Bottles.PinNumber.ToString()[2].ToString();
+                    newPIN4.Text = Bottles.PinNumber.ToString()[3].ToString();
+                    confirm1.Text = Bottles.PinNumber.ToString()[0].ToString();
+                    confirm2.Text = Bottles.PinNumber.ToString()[1].ToString();
+                    confirm3.Text = Bottles.PinNumber.ToString()[2].ToString();
+                    confirm4.Text = Bottles.PinNumber.ToString()[3].ToString();
+
+                    firstName.Focus();
                 }
                 else
                 {
@@ -589,48 +659,39 @@ namespace Cellar
         {
             MoveCursor(newPIN1);
         }
-
         private void NewPIN2_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(newPIN2);
         }
-
         private void NewPIN3_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(newPIN3);
         }
-
         private void NewPIN4_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(newPIN4);
         }
-
         private void NewPIN1_Enter(object sender, EventArgs e)
         {
             // Clear all of the items from the textboxes
             newPIN1.Text = newPIN2.Text = newPIN3.Text = newPIN4.Text = "";
         }
-
         private void Confirm1_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(confirm1);
         }
-
         private void Confirm2_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(confirm2);
         }
-
         private void Confirm3_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(confirm3);
         }
-
         private void Confirm4_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(confirm4);
         }
-
         private void Confirm1_Enter(object sender, EventArgs e)
         {
             // Clear all of the items from the textboxes
@@ -640,22 +701,18 @@ namespace Cellar
         {
             if (txt.Text != "") { SelectNextControl(txt, true, false, true, false); }
         }
-
         private void Pin1_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin1);
         }
-
         private void Pin2_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin2);
         }
-
         private void Pin3_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin3);
         }
-
         private void Pin4_TextChanged(object sender, EventArgs e)
         {
             MoveCursor(pin4);
@@ -696,7 +753,14 @@ namespace Cellar
                 Serializer.SerializePhoto(addLabelPicture.Image));
             Bottles.Bottles.Add(newBottle);
 
-            MessageBox.Show("The bottle has been added to the collection!", "Bottle Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (isEditing)
+            {
+                MessageBox.Show("The bottle has been updated!", "Bottle Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("The bottle has been added to the collection!", "Bottle Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             AddBottleReset();
         }
 

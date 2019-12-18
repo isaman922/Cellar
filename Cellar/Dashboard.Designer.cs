@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -256,13 +256,13 @@
             // dashboardPanel
             // 
             this.dashboardPanel.BackColor = System.Drawing.Color.Linen;
-            this.dashboardPanel.Controls.Add(this.pnlUserMain);
             this.dashboardPanel.Controls.Add(this.label27);
             this.dashboardPanel.Controls.Add(this.label28);
             this.dashboardPanel.Controls.Add(this.dashCellarValue);
             this.dashboardPanel.Controls.Add(this.dashCellarCount);
             this.dashboardPanel.Controls.Add(this.label1);
             this.dashboardPanel.Controls.Add(this.listToOpen);
+            this.dashboardPanel.Controls.Add(this.pnlUserMain);
             this.dashboardPanel.Controls.Add(this.pnlUserEdit);
             this.dashboardPanel.Controls.Add(this.pnlUserPIN);
             this.dashboardPanel.Location = new System.Drawing.Point(280, 122);
@@ -472,7 +472,7 @@
             this.firstName.Location = new System.Drawing.Point(88, 34);
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(100, 25);
-            this.firstName.TabIndex = 49;
+            this.firstName.TabIndex = 0;
             // 
             // lastName
             // 
@@ -480,7 +480,7 @@
             this.lastName.Location = new System.Drawing.Point(88, 65);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(100, 25);
-            this.lastName.TabIndex = 48;
+            this.lastName.TabIndex = 1;
             // 
             // username
             // 
@@ -488,7 +488,7 @@
             this.username.Location = new System.Drawing.Point(88, 96);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(100, 25);
-            this.username.TabIndex = 47;
+            this.username.TabIndex = 2;
             // 
             // confirm4
             // 
@@ -500,7 +500,7 @@
             this.confirm4.Name = "confirm4";
             this.confirm4.PasswordChar = '*';
             this.confirm4.Size = new System.Drawing.Size(25, 25);
-            this.confirm4.TabIndex = 46;
+            this.confirm4.TabIndex = 10;
             this.confirm4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.confirm4.TextChanged += new System.EventHandler(this.Confirm4_TextChanged);
             // 
@@ -514,7 +514,7 @@
             this.confirm3.Name = "confirm3";
             this.confirm3.PasswordChar = '*';
             this.confirm3.Size = new System.Drawing.Size(25, 25);
-            this.confirm3.TabIndex = 45;
+            this.confirm3.TabIndex = 9;
             this.confirm3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.confirm3.TextChanged += new System.EventHandler(this.Confirm3_TextChanged);
             // 
@@ -528,7 +528,7 @@
             this.confirm2.Name = "confirm2";
             this.confirm2.PasswordChar = '*';
             this.confirm2.Size = new System.Drawing.Size(25, 25);
-            this.confirm2.TabIndex = 44;
+            this.confirm2.TabIndex = 8;
             this.confirm2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.confirm2.TextChanged += new System.EventHandler(this.Confirm2_TextChanged);
             // 
@@ -542,7 +542,7 @@
             this.confirm1.Name = "confirm1";
             this.confirm1.PasswordChar = '*';
             this.confirm1.Size = new System.Drawing.Size(25, 25);
-            this.confirm1.TabIndex = 43;
+            this.confirm1.TabIndex = 7;
             this.confirm1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.confirm1.TextChanged += new System.EventHandler(this.Confirm1_TextChanged);
             this.confirm1.Enter += new System.EventHandler(this.Confirm1_Enter);
@@ -577,7 +577,7 @@
             this.newPIN4.Name = "newPIN4";
             this.newPIN4.PasswordChar = '*';
             this.newPIN4.Size = new System.Drawing.Size(25, 25);
-            this.newPIN4.TabIndex = 40;
+            this.newPIN4.TabIndex = 6;
             this.newPIN4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newPIN4.TextChanged += new System.EventHandler(this.NewPIN4_TextChanged);
             // 
@@ -591,7 +591,7 @@
             this.newPIN3.Name = "newPIN3";
             this.newPIN3.PasswordChar = '*';
             this.newPIN3.Size = new System.Drawing.Size(25, 25);
-            this.newPIN3.TabIndex = 39;
+            this.newPIN3.TabIndex = 5;
             this.newPIN3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newPIN3.TextChanged += new System.EventHandler(this.NewPIN3_TextChanged);
             // 
@@ -605,7 +605,7 @@
             this.newPIN2.Name = "newPIN2";
             this.newPIN2.PasswordChar = '*';
             this.newPIN2.Size = new System.Drawing.Size(25, 25);
-            this.newPIN2.TabIndex = 38;
+            this.newPIN2.TabIndex = 4;
             this.newPIN2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newPIN2.TextChanged += new System.EventHandler(this.NewPIN2_TextChanged);
             // 
@@ -619,7 +619,7 @@
             this.newPIN1.Name = "newPIN1";
             this.newPIN1.PasswordChar = '*';
             this.newPIN1.Size = new System.Drawing.Size(25, 25);
-            this.newPIN1.TabIndex = 37;
+            this.newPIN1.TabIndex = 3;
             this.newPIN1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newPIN1.TextChanged += new System.EventHandler(this.NewPIN1_TextChanged);
             this.newPIN1.Enter += new System.EventHandler(this.NewPIN1_Enter);
@@ -633,7 +633,7 @@
             this.btnSaveUser.Location = new System.Drawing.Point(17, 185);
             this.btnSaveUser.Name = "btnSaveUser";
             this.btnSaveUser.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveUser.TabIndex = 33;
+            this.btnSaveUser.TabIndex = 11;
             this.btnSaveUser.Text = "Save";
             this.btnSaveUser.UseVisualStyleBackColor = false;
             this.btnSaveUser.Click += new System.EventHandler(this.BtnSaveUser_Click);
@@ -647,7 +647,7 @@
             this.btnCancelUser.Location = new System.Drawing.Point(106, 185);
             this.btnCancelUser.Name = "btnCancelUser";
             this.btnCancelUser.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelUser.TabIndex = 32;
+            this.btnCancelUser.TabIndex = 12;
             this.btnCancelUser.Text = "Cancel";
             this.btnCancelUser.UseVisualStyleBackColor = false;
             this.btnCancelUser.Click += new System.EventHandler(this.BtnCancelUser_Click);
@@ -717,7 +717,7 @@
             this.pin4.Name = "pin4";
             this.pin4.PasswordChar = '*';
             this.pin4.Size = new System.Drawing.Size(28, 28);
-            this.pin4.TabIndex = 36;
+            this.pin4.TabIndex = 3;
             this.pin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pin4.TextChanged += new System.EventHandler(this.Pin4_TextChanged);
             // 
@@ -731,7 +731,7 @@
             this.pin3.Name = "pin3";
             this.pin3.PasswordChar = '*';
             this.pin3.Size = new System.Drawing.Size(28, 28);
-            this.pin3.TabIndex = 35;
+            this.pin3.TabIndex = 2;
             this.pin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pin3.TextChanged += new System.EventHandler(this.Pin3_TextChanged);
             // 
@@ -745,7 +745,7 @@
             this.pin2.Name = "pin2";
             this.pin2.PasswordChar = '*';
             this.pin2.Size = new System.Drawing.Size(28, 28);
-            this.pin2.TabIndex = 34;
+            this.pin2.TabIndex = 1;
             this.pin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pin2.TextChanged += new System.EventHandler(this.Pin2_TextChanged);
             // 
@@ -759,7 +759,7 @@
             this.pin1.Name = "pin1";
             this.pin1.PasswordChar = '*';
             this.pin1.Size = new System.Drawing.Size(28, 28);
-            this.pin1.TabIndex = 33;
+            this.pin1.TabIndex = 0;
             this.pin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pin1.TextChanged += new System.EventHandler(this.Pin1_TextChanged);
             // 
@@ -772,7 +772,7 @@
             this.btnSubmitUser.Location = new System.Drawing.Point(62, 185);
             this.btnSubmitUser.Name = "btnSubmitUser";
             this.btnSubmitUser.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmitUser.TabIndex = 32;
+            this.btnSubmitUser.TabIndex = 4;
             this.btnSubmitUser.Text = "Submit";
             this.btnSubmitUser.UseVisualStyleBackColor = false;
             this.btnSubmitUser.Click += new System.EventHandler(this.BtnSubmitUser_Click);
@@ -949,6 +949,8 @@
             // 
             // addImportance
             // 
+            this.addImportance.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.addImportance.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.addImportance.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addImportance.FormattingEnabled = true;
             this.addImportance.Items.AddRange(new object[] {
@@ -973,6 +975,8 @@
             // 
             // addType
             // 
+            this.addType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.addType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.addType.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addType.FormattingEnabled = true;
             this.addType.Items.AddRange(new object[] {
@@ -1099,6 +1103,8 @@
             // 
             // addSize
             // 
+            this.addSize.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.addSize.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.addSize.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addSize.FormattingEnabled = true;
             this.addSize.Items.AddRange(new object[] {
@@ -1355,36 +1361,37 @@
             // 
             // statCategoryChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.statCategoryChart.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Name = "Legend1";
-            this.statCategoryChart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.statCategoryChart.ChartAreas.Add(chartArea3);
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend3.Name = "Legend1";
+            this.statCategoryChart.Legends.Add(legend3);
             this.statCategoryChart.Location = new System.Drawing.Point(301, 255);
             this.statCategoryChart.Name = "statCategoryChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Category";
-            this.statCategoryChart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Category";
+            this.statCategoryChart.Series.Add(series3);
             this.statCategoryChart.Size = new System.Drawing.Size(250, 250);
             this.statCategoryChart.TabIndex = 21;
             this.statCategoryChart.Text = "chart1";
             // 
             // statCountryChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.statCountryChart.ChartAreas.Add(chartArea2);
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.statCountryChart.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.statCountryChart.ChartAreas.Add(chartArea4);
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Name = "Legend1";
+            this.statCountryChart.Legends.Add(legend4);
             this.statCountryChart.Location = new System.Drawing.Point(8, 255);
             this.statCountryChart.Name = "statCountryChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Country";
-            this.statCountryChart.Series.Add(series2);
+            this.statCountryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Legend = "Legend1";
+            series4.Name = "Country";
+            this.statCountryChart.Series.Add(series4);
             this.statCountryChart.Size = new System.Drawing.Size(250, 250);
             this.statCountryChart.TabIndex = 20;
             this.statCountryChart.Text = "chart1";
@@ -1522,10 +1529,10 @@
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.addPanel);
             this.Controls.Add(this.dashboardPanel);
             this.Controls.Add(this.statsPanel);
             this.Controls.Add(this.inventoryPanel);
+            this.Controls.Add(this.addPanel);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(898, 722);
             this.MinimumSize = new System.Drawing.Size(898, 722);

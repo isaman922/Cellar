@@ -130,6 +130,7 @@ namespace Cellar.Models
 
             foreach (Bottle b in bottles)
             {
+                bool isNew = true;
                 if (stats.Count != 0)
                 {
                     foreach (var entry in stats)
@@ -137,11 +138,12 @@ namespace Cellar.Models
                         if (b.Country == entry[0])
                         {
                             entry[1] = (Convert.ToInt32(entry[1]) + 1).ToString();
+                            isNew = false;
                         }
-                        else
-                        {
-                            stats.Add(new string[] { b.Country, "1" });
-                        }
+                    }
+                    if (isNew)
+                    {
+                        stats.Add(new string[] { b.Country, "1" });
                     }
                 }
                 else

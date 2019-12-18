@@ -113,6 +113,7 @@ namespace Cellar
             if (choice == DialogResult.OK)
             {
                 theSender.Bottles.Bottles.Remove(theBottle);
+                theSender.SetInventory();
                 Hide();
             }
         }

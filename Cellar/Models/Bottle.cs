@@ -68,9 +68,14 @@ namespace Cellar.Models
             location = loc;
             typeCode = type;
             importanceCode = importance;
-            ratings = criticRatings;
+            ratings = new List<string[]>();
             notes = memo;
             serializedLabelImage = photoSerialized;
+
+            foreach (string[] rating in criticRatings)
+            {
+                ratings.Add(rating);
+            }
         }
 
         public override string ToString()
@@ -99,7 +104,7 @@ namespace Cellar.Models
         public string ToOpenString()
         {
             //Return the string to be displayed on the dashboard of bottles to open
-            string summary = $"{Vintage} {BottleName}, Drink {DrinkByStart} - {DrinkByEnd} ({DrinkByPeak})";
+            string summary = $"{Vintage} {BottleName}, Drink {DrinkByStart} - {DrinkByEnd} (peak {DrinkByPeak})";
 
             return summary;
         }
