@@ -1371,7 +1371,7 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend1.Name = "Legend1";
             this.statCategoryChart.Legends.Add(legend1);
-            this.statCategoryChart.Location = new System.Drawing.Point(301, 255);
+            this.statCategoryChart.Location = new System.Drawing.Point(317, 255);
             this.statCategoryChart.Name = "statCategoryChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -1389,7 +1389,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.statCountryChart.Legends.Add(legend2);
-            this.statCountryChart.Location = new System.Drawing.Point(8, 255);
+            this.statCountryChart.Location = new System.Drawing.Point(24, 255);
             this.statCountryChart.Name = "statCountryChart";
             this.statCountryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series2.ChartArea = "ChartArea1";
