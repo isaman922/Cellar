@@ -46,7 +46,7 @@ namespace Cellar.Models
         public string Location { get => location; set => location = value; }
         public int TypeCode { get => typeCode; set => typeCode = value; }
         public int ImportanceCode { get => importanceCode; set => importanceCode = value; }
-        public List<string[]> Ratings { get => ratings; set => ratings = value; }
+        public List<string[]> Ratings { get => SortRatings(); set => ratings = value; }
         public string Notes { get => notes; set => notes = value; }
         public string SerializedLabelImage { get => serializedLabelImage; set => serializedLabelImage = value; }
 
@@ -124,6 +124,26 @@ namespace Cellar.Models
                 summary = $"{"N/V  " + BottleName}   *** Drink {DrinkByStart} - {DrinkByEnd} ***";
             }
             return summary;
+        }
+
+        private List<string[]> SortRatings()
+        {
+            List<string[]> tempList = new List<string[]>();
+
+            var sortQuery = from rating in ratings
+                            orderby Convert.ToInt32(rating[0]) descending
+                            select rating;
+
+            //ratings.Clear();
+
+            foreach (string[] r in sortQuery)
+            {
+                tempList.Add(r);
+            }
+
+            ratings = tempList;
+
+            return ratings;
         }
     }
 }

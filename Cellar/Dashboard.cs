@@ -375,7 +375,6 @@ namespace Cellar
                     }
                     break;
                 case 2:
-                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.Country).ToList();
                     var originQuery = from bottle in Bottles.Bottles
                                        orderby bottle.Country ascending, bottle.Subregion ascending, bottle.BottleName ascending
                                        select bottle;
@@ -386,7 +385,6 @@ namespace Cellar
                     }
                     break;
                 case 3:
-                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.TypeCode).ToList();
                     var typeQuery = from bottle in Bottles.Bottles
                                        orderby bottle.TypeCode ascending, bottle.BottleName ascending
                                        select bottle;
@@ -397,7 +395,6 @@ namespace Cellar
                     }
                     break;
                 case 4:
-                    Bottles.Bottles = Bottles.Bottles.OrderBy(o => o.ImportanceCode).ToList();
                     var importanceQuery = from bottle in Bottles.Bottles
                                        orderby bottle.ImportanceCode ascending, bottle.BottleName ascending
                                        select bottle;
@@ -443,6 +440,7 @@ namespace Cellar
                     "Delete Rating?", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (answer == DialogResult.OK)
                 {
+                    ratingsTemp.RemoveAt(addRatingList.SelectedIndex);
                     addRatingList.Items.RemoveAt(addRatingList.SelectedIndex);
                 }
             }
@@ -488,6 +486,7 @@ namespace Cellar
                             MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 }
             }
+            addRatingPts.Focus();
         }
 
         private void BtnUploadLabel_Click(object sender, EventArgs e)
@@ -833,6 +832,7 @@ namespace Cellar
             inventoryPanel.Visible = false;
             statsPanel.Visible = false;
 
+            ratingsTemp.Clear();
             foreach (string[] item in theBottle.Ratings)
             {
                 ratingsTemp.Add(item);

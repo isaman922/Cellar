@@ -83,7 +83,6 @@
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnEdit);
-            this.panel2.Controls.Add(this.lblVintName);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lblDrinkRange);
@@ -91,6 +90,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lblOrigin);
             this.panel2.Controls.Add(this.lblProducer);
+            this.panel2.Controls.Add(this.lblVintName);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(858, 537);
@@ -317,12 +317,15 @@
             // 
             this.lblVintName.AutoSize = true;
             this.lblVintName.BackColor = System.Drawing.Color.Linen;
-            this.lblVintName.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVintName.Location = new System.Drawing.Point(140, 20);
+            this.lblVintName.Font = new System.Drawing.Font("Modern No. 20", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVintName.Location = new System.Drawing.Point(2, 3);
+            this.lblVintName.MaximumSize = new System.Drawing.Size(855, 90);
+            this.lblVintName.MinimumSize = new System.Drawing.Size(855, 90);
             this.lblVintName.Name = "lblVintName";
-            this.lblVintName.Size = new System.Drawing.Size(578, 50);
+            this.lblVintName.Size = new System.Drawing.Size(855, 90);
             this.lblVintName.TabIndex = 43;
             this.lblVintName.Text = "2010 Chateau Pape Clement";
+            this.lblVintName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
@@ -375,16 +378,16 @@
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(19, 116);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 21);
+            this.label6.Size = new System.Drawing.Size(70, 21);
             this.label6.TabIndex = 46;
-            this.label6.Text = "Country:";
+            this.label6.Text = "Origin:";
             // 
             // lblOrigin
             // 
             this.lblOrigin.AutoSize = true;
             this.lblOrigin.BackColor = System.Drawing.Color.Linen;
             this.lblOrigin.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrigin.Location = new System.Drawing.Point(98, 116);
+            this.lblOrigin.Location = new System.Drawing.Point(84, 116);
             this.lblOrigin.Name = "lblOrigin";
             this.lblOrigin.Size = new System.Drawing.Size(164, 21);
             this.lblOrigin.TabIndex = 47;

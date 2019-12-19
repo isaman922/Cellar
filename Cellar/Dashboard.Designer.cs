@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
@@ -43,6 +43,12 @@
             this.title = new System.Windows.Forms.Label();
             this.subtitle = new System.Windows.Forms.Label();
             this.dashboardPanel = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.dashCellarValue = new System.Windows.Forms.Label();
+            this.dashCellarCount = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listToOpen = new System.Windows.Forms.ListBox();
             this.pnlUserMain = new System.Windows.Forms.Panel();
             this.btnEditUser = new System.Windows.Forms.Button();
             this.pin = new System.Windows.Forms.Label();
@@ -52,12 +58,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.dashCellarValue = new System.Windows.Forms.Label();
-            this.dashCellarCount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listToOpen = new System.Windows.Forms.ListBox();
             this.pnlUserEdit = new System.Windows.Forms.Panel();
             this.firstName = new System.Windows.Forms.TextBox();
             this.lastName = new System.Windows.Forms.TextBox();
@@ -270,6 +270,71 @@
             this.dashboardPanel.Size = new System.Drawing.Size(590, 549);
             this.dashboardPanel.TabIndex = 1;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(22, 119);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(84, 18);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "Total Value";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(22, 23);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(92, 18);
+            this.label28.TabIndex = 21;
+            this.label28.Text = "Total Bottles";
+            // 
+            // dashCellarValue
+            // 
+            this.dashCellarValue.AutoSize = true;
+            this.dashCellarValue.Font = new System.Drawing.Font("Pristina", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashCellarValue.Location = new System.Drawing.Point(39, 137);
+            this.dashCellarValue.Name = "dashCellarValue";
+            this.dashCellarValue.Size = new System.Drawing.Size(177, 63);
+            this.dashCellarValue.TabIndex = 24;
+            this.dashCellarValue.Text = "$3081.25";
+            // 
+            // dashCellarCount
+            // 
+            this.dashCellarCount.AutoSize = true;
+            this.dashCellarCount.Font = new System.Drawing.Font("Pristina", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashCellarCount.Location = new System.Drawing.Point(39, 26);
+            this.dashCellarCount.Name = "dashCellarCount";
+            this.dashCellarCount.Size = new System.Drawing.Size(67, 63);
+            this.dashCellarCount.TabIndex = 23;
+            this.dashCellarCount.Text = "37";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(310, 18);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Bottles Currently in Their Drink-By Window:";
+            // 
+            // listToOpen
+            // 
+            this.listToOpen.BackColor = System.Drawing.Color.Linen;
+            this.listToOpen.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listToOpen.FormattingEnabled = true;
+            this.listToOpen.ItemHeight = 18;
+            this.listToOpen.Items.AddRange(new object[] {
+            "Place all bottles in in the drink-by window here:",
+            "2010 Chateau Pape Clement, Drink 2035 - 2055 (Peak 2050)"});
+            this.listToOpen.Location = new System.Drawing.Point(25, 292);
+            this.listToOpen.Name = "listToOpen";
+            this.listToOpen.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listToOpen.Size = new System.Drawing.Size(544, 238);
+            this.listToOpen.TabIndex = 19;
+            // 
             // pnlUserMain
             // 
             this.pnlUserMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -372,71 +437,6 @@
             this.label7.Size = new System.Drawing.Size(106, 21);
             this.label7.TabIndex = 25;
             this.label7.Text = "User Details";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(22, 119);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(84, 18);
-            this.label27.TabIndex = 22;
-            this.label27.Text = "Total Value";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(22, 23);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(92, 18);
-            this.label28.TabIndex = 21;
-            this.label28.Text = "Total Bottles";
-            // 
-            // dashCellarValue
-            // 
-            this.dashCellarValue.AutoSize = true;
-            this.dashCellarValue.Font = new System.Drawing.Font("Pristina", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashCellarValue.Location = new System.Drawing.Point(39, 137);
-            this.dashCellarValue.Name = "dashCellarValue";
-            this.dashCellarValue.Size = new System.Drawing.Size(177, 63);
-            this.dashCellarValue.TabIndex = 24;
-            this.dashCellarValue.Text = "$3081.25";
-            // 
-            // dashCellarCount
-            // 
-            this.dashCellarCount.AutoSize = true;
-            this.dashCellarCount.Font = new System.Drawing.Font("Pristina", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashCellarCount.Location = new System.Drawing.Point(39, 26);
-            this.dashCellarCount.Name = "dashCellarCount";
-            this.dashCellarCount.Size = new System.Drawing.Size(67, 63);
-            this.dashCellarCount.TabIndex = 23;
-            this.dashCellarCount.Text = "37";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 271);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 18);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Bottles Currently in Their Drink-By Window:";
-            // 
-            // listToOpen
-            // 
-            this.listToOpen.BackColor = System.Drawing.Color.Linen;
-            this.listToOpen.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listToOpen.FormattingEnabled = true;
-            this.listToOpen.ItemHeight = 18;
-            this.listToOpen.Items.AddRange(new object[] {
-            "Place all bottles in in the drink-by window here:",
-            "2010 Chateau Pape Clement, Drink 2035 - 2055 (Peak 2050)"});
-            this.listToOpen.Location = new System.Drawing.Point(25, 292);
-            this.listToOpen.Name = "listToOpen";
-            this.listToOpen.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listToOpen.Size = new System.Drawing.Size(544, 238);
-            this.listToOpen.TabIndex = 19;
             // 
             // pnlUserEdit
             // 
@@ -1366,37 +1366,37 @@
             // 
             // statCategoryChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.statCategoryChart.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Name = "Legend1";
-            this.statCategoryChart.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.statCategoryChart.ChartAreas.Add(chartArea5);
+            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend5.Name = "Legend1";
+            this.statCategoryChart.Legends.Add(legend5);
             this.statCategoryChart.Location = new System.Drawing.Point(317, 255);
             this.statCategoryChart.Name = "statCategoryChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Category";
-            this.statCategoryChart.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Legend = "Legend1";
+            series5.Name = "Category";
+            this.statCategoryChart.Series.Add(series5);
             this.statCategoryChart.Size = new System.Drawing.Size(250, 250);
             this.statCategoryChart.TabIndex = 21;
             this.statCategoryChart.Text = "chart1";
             // 
             // statCountryChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.statCountryChart.ChartAreas.Add(chartArea2);
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.statCountryChart.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.statCountryChart.ChartAreas.Add(chartArea6);
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend6.Name = "Legend1";
+            this.statCountryChart.Legends.Add(legend6);
             this.statCountryChart.Location = new System.Drawing.Point(24, 255);
             this.statCountryChart.Name = "statCountryChart";
             this.statCountryChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Country";
-            this.statCountryChart.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Country";
+            this.statCountryChart.Series.Add(series6);
             this.statCountryChart.Size = new System.Drawing.Size(250, 250);
             this.statCountryChart.TabIndex = 20;
             this.statCountryChart.Text = "chart1";
@@ -1534,10 +1534,10 @@
             this.Controls.Add(this.subtitle);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.statsPanel);
-            this.Controls.Add(this.inventoryPanel);
             this.Controls.Add(this.addPanel);
             this.Controls.Add(this.dashboardPanel);
+            this.Controls.Add(this.statsPanel);
+            this.Controls.Add(this.inventoryPanel);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(898, 722);
             this.MinimumSize = new System.Drawing.Size(898, 722);
