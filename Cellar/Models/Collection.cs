@@ -85,15 +85,23 @@ namespace Cellar.Models
         {
             //Retrieve and return average age of a bottle in the collection
             double totalAge = 0;
+            int bottlesExcluded = 0;
 
             foreach (Bottle b in bottles)
             {
-                totalAge += (DateTime.Today.Year - b.Vintage);
+                if (b.Vintage == 0)
+                {
+                    bottlesExcluded++;
+                }
+                else
+                {
+                    totalAge += (DateTime.Today.Year - b.Vintage);
+                }
             }
 
             if (BottleCount() != 0)
             {
-                double age = totalAge / BottleCount();
+                double age = totalAge / (BottleCount()-bottlesExcluded);
                 return age;
             }
             else
