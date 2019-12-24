@@ -310,28 +310,7 @@ namespace Cellar
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (isEditing)
-            {
-                CheckEdit();
-            }
-
-            //Get and deserialize all collections in the DB into a list of collections
-            List<Models.Collection> records = Serializer.GetCollections();
-
-            //Delete the collection where username = bottles.Username
-            foreach (Models.Collection record in records.ToList())
-            {
-                if (record.UserName == Bottles.UserName)
-                {
-                    records.Remove(record);
-                }
-            }
-
-            //Add the current collection
-            records.Add(Bottles);
-
-            //Store them in the database
-            Serializer.StoreCollections(records);
+            BeforeClose();
 
             //Then terminate the application
             Application.Exit();
@@ -864,6 +843,43 @@ namespace Cellar
             addImportance.Text = addImportance.Items[theBottle.ImportanceCode].ToString();
             addNotes.Text = theBottle.Notes;
             addLabelPicture.Image = Serializer.DeserializePhoto(theBottle.SerializedLabelImage);
+        }
+
+        private void lblLogOut_Click(object sender, EventArgs e)
+        {
+            //TO DO
+
+            //Save, Log Out, and start at the StartPage again.
+            BeforeClose();
+            Hide();
+            StartPage newStart = new StartPage();
+            newStart.Show();
+        }
+
+        public void BeforeClose()
+        {
+            if (isEditing)
+            {
+                CheckEdit();
+            }
+
+            //Get and deserialize all collections in the DB into a list of collections
+            List<Models.Collection> records = Serializer.GetCollections();
+
+            //Delete the collection where username = bottles.Username
+            foreach (Models.Collection record in records.ToList())
+            {
+                if (record.UserName == Bottles.UserName)
+                {
+                    records.Remove(record);
+                }
+            }
+
+            //Add the current collection
+            records.Add(Bottles);
+
+            //Store them in the database
+            Serializer.StoreCollections(records);
         }
     }
 }
