@@ -627,6 +627,7 @@ namespace Cellar
                     pnlUserEdit.Visible = false;
                     dashNameLbl.Text = $"{Bottles.FirstName} {Bottles.LastName}";
                     dashUserLbl.Text = Bottles.UserName;
+                    subtitle.Text = $"{Bottles.FirstName} {Bottles.LastName}'s Cellar";
                 }
             }
             catch
@@ -648,14 +649,46 @@ namespace Cellar
                     firstName.Text = Bottles.FirstName;
                     lastName.Text = Bottles.LastName;
                     username.Text = Bottles.UserName;
-                    newPIN1.Text = Bottles.PinNumber.ToString()[0].ToString();
-                    newPIN2.Text = Bottles.PinNumber.ToString()[1].ToString();
-                    newPIN3.Text = Bottles.PinNumber.ToString()[2].ToString();
-                    newPIN4.Text = Bottles.PinNumber.ToString()[3].ToString();
-                    confirm1.Text = Bottles.PinNumber.ToString()[0].ToString();
-                    confirm2.Text = Bottles.PinNumber.ToString()[1].ToString();
-                    confirm3.Text = Bottles.PinNumber.ToString()[2].ToString();
-                    confirm4.Text = Bottles.PinNumber.ToString()[3].ToString();
+
+                    int i = Bottles.PinNumber.ToString().Length;
+
+                    switch (i)
+                    {
+                        case 1:
+                            newPIN1.Text = newPIN2.Text = newPIN3.Text = "0";
+                            newPIN4.Text = Bottles.PinNumber.ToString()[0].ToString();
+                            confirm1.Text = confirm2.Text = confirm3.Text = "0";
+                            confirm4.Text = Bottles.PinNumber.ToString()[0].ToString();
+                            break;
+                        case 2:
+                            newPIN1.Text = newPIN2.Text = "0";
+                            newPIN3.Text = Bottles.PinNumber.ToString()[0].ToString();
+                            newPIN4.Text = Bottles.PinNumber.ToString()[1].ToString();
+                            confirm1.Text = confirm2.Text = "0";
+                            confirm3.Text = Bottles.PinNumber.ToString()[0].ToString();
+                            confirm4.Text = Bottles.PinNumber.ToString()[1].ToString();
+                            break;
+                        case 3:
+                            newPIN1.Text = "0";
+                            newPIN2.Text = Bottles.PinNumber.ToString()[0].ToString();
+                            newPIN3.Text = Bottles.PinNumber.ToString()[1].ToString();
+                            newPIN4.Text = Bottles.PinNumber.ToString()[2].ToString();
+                            confirm1.Text = "0";
+                            confirm2.Text = Bottles.PinNumber.ToString()[0].ToString();
+                            confirm3.Text = Bottles.PinNumber.ToString()[1].ToString();
+                            confirm4.Text = Bottles.PinNumber.ToString()[2].ToString();
+                            break;
+                        default:
+                            newPIN1.Text = Bottles.PinNumber.ToString()[0].ToString();
+                            newPIN2.Text = Bottles.PinNumber.ToString()[1].ToString();
+                            newPIN3.Text = Bottles.PinNumber.ToString()[2].ToString();
+                            newPIN4.Text = Bottles.PinNumber.ToString()[3].ToString();
+                            confirm1.Text = Bottles.PinNumber.ToString()[0].ToString();
+                            confirm2.Text = Bottles.PinNumber.ToString()[1].ToString();
+                            confirm3.Text = Bottles.PinNumber.ToString()[2].ToString();
+                            confirm4.Text = Bottles.PinNumber.ToString()[3].ToString();
+                            break;
+                    }
 
                     firstName.Focus();
                 }
@@ -880,6 +913,11 @@ namespace Cellar
 
             //Store them in the database
             Serializer.StoreCollections(records);
+        }
+
+        private void addPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
